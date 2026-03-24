@@ -33,10 +33,13 @@
         <div class="footer-lp__bottom">
             <p class="footer-lp__copyright">© 2023 PT Beli Mobil Duit Sendiri</p>
             <div class="footer-lp__social">
-                <img src="/content/dam/itv/whatsapp.png" alt="WA" href="#">
-                <img src="/content/dam/itv/tiktok.png" alt="TK" href="#">
-                <img src="/content/dam/itv/ig.png" alt="IG" href="#">
-                <img src="/content/dam/itv/fb.png" alt="FB" href="#">
+                <sly data-sly-use.socialNodes="${resource.path}/socialLinks">
+                    <sly data-sly-list.item="${socialNodes.listChildren}">
+                        <a href="${item.link}" class="footer-lp__social-link">
+                            <img src="${item.iconPath}" alt="Social Icon">
+                        </a>
+                    </sly>
+                </sly>
             </div>
         </div>
 

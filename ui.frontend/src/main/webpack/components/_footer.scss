@@ -144,6 +144,16 @@
     display: flex !important;
     gap: 16px !important;
     cursor: pointer;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    max-width: none !important;
+}
+
+@media (max-width: 393px) {
+    .footer-lp__social {
+        gap: 20px !important;
+        justify-content: center !important;
+    }
 }
 
 .footer-lp__social img {
@@ -152,4 +162,20 @@
     background-color: #ffffff !important;
     border-radius: 50% !important;
     object-fit: contain !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+}
+
+.footer-lp__social-link {
+    text-decoration: none !important;
+    display: inline-flex !important;
+    transition: transform 0.2s ease !important;
+}
+
+.footer-lp__social-link:hover {
+    transform: translateY(-3px) !important;
+}
+
+.footer-lp__social-link img {
+    cursor: pointer !important;
 }
