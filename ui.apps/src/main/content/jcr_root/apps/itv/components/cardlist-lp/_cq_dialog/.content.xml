@@ -31,10 +31,6 @@
                                         jcr:primaryType="nt:unstructured"
                                         text="Card Vertical"
                                         value="vertical" />
-                                    <horizontal
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Card Horizontal"
-                                        value="horizontal" />
                                 </items>
                             </layout>
                             <cards
