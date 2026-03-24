@@ -4,8 +4,8 @@ function initCardSwiper() {
     
     if (container) {
         new Swiper(container, {
-            slidesPerView: 'auto', // Esto permite que el ancho lo defina tu CSS (365px o 264px)
-            spaceBetween: 25,      // Espacio entre tarjetas
+            slidesPerView: 'auto', // Esto permite que el ancho lo defina tu CSS
+            spaceBetween: 26,      // Espacio entre tarjetas
             loop: false,           // Cambia a true si quieres carrusel infinito
             grabCursor: true,      // Cambia el cursor a una mano
             

@@ -1,9 +1,13 @@
+body, html {
+    background-color: white !important;
+}
+
 .brands.aem-GridColumn {
     padding: 0 !important;
 }
 
 .brands {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     padding-top: calc(45px + (80 - 45) * ((100vw - 1024px) / (1920 - 1024)));
     width: 100%;
     padding-bottom: clamp(14px, calc(14px + (80 - 14) * ((100vw - 393px) / (1024 - 393))), 80px);

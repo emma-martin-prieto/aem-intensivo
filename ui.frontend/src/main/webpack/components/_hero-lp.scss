@@ -15,15 +15,15 @@
         position: absolute !important;
         top: 0; 
         left: 0;
-        width: 100% !important; /* Cubrimos todo el ancho */
+        width: 100% !important;
         height: 100% !important;
         background: linear-gradient(
             to right, 
-            rgba(0, 0, 0, 0.7) 0%,   /* Más oscuro a la izquierda */
+            rgba(0, 0, 0, 0.7) 0%, 
             rgba(0, 0, 0, 0.4) 40%, 
             rgba(0, 0, 0, 0) 100%
         ) !important;
-        z-index: 1 !important;      /* Capa 1 */
+        z-index: 1 !important; 
         pointer-events: none !important;
     }
 
@@ -52,7 +52,7 @@
         min-width: 512px !important;
         margin-top: 211px !important; 
         flex-shrink: 0 !important;
-        position: relative !important; /* Asegura que responda al z-index */
+        position: relative !important;
         z-index: 20 !important;
     }
 
@@ -143,18 +143,17 @@
 
     /* 6. RESPONSIVO INTERMEDIO (1024px) */
     @media (max-width: 1024px) {
-        height: auto !important;
-        min-height: 100vh !important;
-
-        &::before {
-            width: 100% !important;
-            height: 100% !important;
+        .hero-lp {
+            height: auto !important;
+            min-height: 800px !important; /* Altura suficiente para texto + coche */
+            overflow: hidden !important; 
         }
 
         .hero-lp__container {
+            display: flex !important;
             flex-direction: column !important;
-            align-items: center !important;
-            padding: 0 16px !important;
+            padding: 0 40px !important;
+            height: 100% !important;
         }
 
         .hero-lp__content {
@@ -169,25 +168,34 @@
         }
 
         .hero-lp__car-wrapper {
-            position: relative !important;
-            right: auto !important;
-            top: 20px !important;
+            position: absolute !important;
+            bottom: 20px !important; /* Ajusta este valor para que toque la carretera de tu foto */
+            left: 0 !important;
+            right: 0 !important;
+            top: auto !important;
             width: 100% !important;
+            height: auto !important;
+            display: flex !important;
             justify-content: center !important;
-            margin-bottom: 50px !important;
+            overflow: visible !important; /* CRÍTICO: Para que la imagen no se corte dentro del wrapper */
+            z-index: 5 !important;
         }
 
         .hero-lp__car-img {
-            width: 100% !important;
+            width: 90% !important;
+            max-width: 700px !important;
             height: auto !important;
-            max-width: 600px !important;
+            object-fit: contain !important;
         }
     }
 
     /* 7. RESPONSIVO MÓVIL ESPECÍFICO */
     @media (max-width: 535px) {
+        .hero-lp {
+            min-height: 750px !important;
+        }
+
         .hero-lp__container {
-            align-items: flex-start !important; 
             padding: 0 24px !important;
         }
 
@@ -219,18 +227,23 @@
         }
 
         .hero-lp__car-wrapper {
-            margin-top: 40px !important;
-            width: 100% !important;
-            display: flex !important;
             justify-content: flex-start !important; 
+            left: 0 !important;
+            right: auto !important;
+            width: 100% !important;
             overflow: visible !important;
         }
 
         .hero-lp__car-img {
-            width: 140% !important; 
+            width: 130% !important;
             max-width: none !important;
+            position: relative !important;
+            left: -5% !important;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
             height: auto !important;
-            transform: translateX(15%) !important; 
+            object-fit: contain !important;
+            object-position: left center !important;
         }
     }
 }
