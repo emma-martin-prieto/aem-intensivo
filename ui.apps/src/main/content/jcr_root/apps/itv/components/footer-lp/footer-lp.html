@@ -1,21 +1,27 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientlib.css @ categories='itv.site'}"/>
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
 
 <footer class="footer-lp">
     <div class="footer-lp__container">
         
         <div class="footer-lp__top">
             <div class="footer-lp__info">
-                <h2 class="footer-lp__title">BuyCar</h2>
-                <p class="footer-lp__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                <h2 class="footer-lp__title">BuyCar</h2>  
+                <div class="footer-lp__text-authorable">
+                    <sly data-sly-resource="${'text' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                </div>
                 <div class="footer-lp__contact">
                     <div class="footer-lp__contact-item">
                         <img src="/content/dam/itv/icon-location.png" alt="Loc">
-                        <span>Jl. Letjen S. Parman No. Kav 21, Jakarta</span>
+                        <div class="footer-lp__contact-text">
+                            <sly data-sly-resource="${'address' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                        </div>
                     </div>
                     <div class="footer-lp__contact-item">
                         <img src="/content/dam/itv/icon-email.png" alt="Email">
-                        <span>cs@buycar.co.id</span>
+                        <div class="footer-lp__contact-text">
+                            <sly data-sly-resource="${'email-contact' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,12 +32,38 @@
                     <sly data-sly-resource="${'navigation-footer' @ resourceType='itv/components/navigation'}"></sly>
                 </nav>
             </div>
+
+            <div class="footer-lp__form-container">
+                <h2 class="footer-lp__title">${properties.formTitle || 'Contáctanos'}</h2>
+                <form id="footerContactForm" class="footer-lp__form">
+                    <div class="form-group">
+                        <input type="text" id="formName" placeholder="Nombre completo" required>
+                        <span class="error-msg" id="nameError">Solo se permiten letras</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="formEmail" placeholder="Tu Email" required>
+                        <span class="error-msg" id="emailError">Email no válido</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="formPhone" placeholder="Teléfono (opcional)">
+                        <span class="error-msg" id="phoneError">Solo se permiten números</span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="formMessage" placeholder="Tu consulta (mín. 20 caracteres)" rows="3" required></textarea>
+                        <span class="error-msg" id="messageError">Debe tener entre 20 y 300 caracteres</span>
+                    </div>
+                    <button type="submit" id="formSubmit" class="footer-lp__submit" disabled>Enviar</button>
+                </form>
+                <div id="formResponse" class="footer-lp__success">
+                    ${properties.successMessage || '¡Gracias! Nos pondremos en contacto pronto.'}
+                </div>
+            </div>
         </div>
 
         <hr class="footer-lp__divider">
 
         <div class="footer-lp__bottom">
-            <p class="footer-lp__copyright">© 2023 PT Beli Mobil Duit Sendiri</p>
+            <p class="footer-lp__copyright">${properties.copyrightText || '© 2023 PT Beli Mobil Duit Sendiri'}</p>
             <div class="footer-lp__social">
                 <sly data-sly-use.socialNodes="${resource.path}/socialLinks">
                     <sly data-sly-list.item="${socialNodes.listChildren}">

@@ -44,6 +44,28 @@
                             </items>
                         </field>
                     </socialLinks>
+
+                    <formTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Título del Formulario"
+                        name="./formTitle"
+                        emptyText="Contáctanos"/>
+                    
+                    <successMessage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Mensaje de éxito del formulario"
+                        name="./successMessage"
+                        emptyText="¡Gracias! Nos pondremos en contacto pronto."/>
+
+                    <copyrightText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Texto de Copyright"
+                        name="./copyrightText"
+                        emptyText="© 2026 BuyCar - Todos los derechos reservados"/>
+
                 </items>
             </column>
         </items>
