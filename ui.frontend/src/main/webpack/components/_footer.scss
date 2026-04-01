@@ -6,8 +6,6 @@
     padding: 40px 0 !important;
     box-sizing: border-box !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-
-    /* Fondo infinito para AEM */
     box-shadow: 0 0 0 100vmax #1a1a1a !important;
     clip-path: inset(0 -100vmax) !important;
 }
@@ -29,15 +27,19 @@
     }
 }
 
-/* BLOQUE SUPERIOR */
-.footer-lp__top {
+/* ── FILA SUPERIOR: info + links apilados en columna ── */
+.footer-lp__row--top {
     display: flex !important;
+    flex-direction: row !important;        /* ← de column a row */
     justify-content: space-between !important;
     align-items: flex-start !important;
+    gap: 40px !important;
+    margin-bottom: 40px !important;
 }
 
 .footer-lp__info {
     max-width: 450px !important;
+    flex: 1 !important;
 }
 
 .footer-lp__title {
@@ -71,7 +73,7 @@
 
 .footer-lp__contact-item {
     display: flex !important;
-    align-items: center !important; 
+    align-items: center !important;
     gap: 12px !important;
     margin-bottom: 12px !important;
 }
@@ -83,14 +85,11 @@
     object-fit: contain !important;
 }
 
-/* NAVEGACIÓN DINÁMICA */
+/* ── NAVEGACIÓN ── */
 .footer-lp__links {
     text-align: left !important;
-    margin-left: 15% !important;
-
-    @media (max-width: 393px) {
-        display: none !important; 
-    }
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;             /* ← no se encoge */
 }
 
 .footer-lp__links .header-lp__list {
@@ -114,24 +113,138 @@
     opacity: 1;
 }
 
-/* LÍNEA DIVISORA */
+/* ── FILA INFERIOR: mapa izquierda · formulario derecha ── */
+.footer-lp__row--bottom {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 40px !important;
+    align-items: stretch !important;
+    margin-bottom: 40px !important;
+}
+
+.footer-lp__map-section {
+    flex: 1 !important;
+    min-width: 0 !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.footer-lp__map-section iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 350px !important;
+    border: 0 !important;
+    display: block !important;
+    filter: none !important;
+}
+
+/* ── FORMULARIO ── */
+.footer-lp__form-container {
+    width: 350px !important;
+    flex-shrink: 0 !important;
+}
+
+.footer-lp__form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+}
+
+.footer-lp__form--hidden {
+    display: none !important;
+}
+
+.form-group {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.footer-lp__form input,
+.footer-lp__form textarea {
+    background: #2a2a2a !important;
+    border: 1px solid #444 !important;
+    border-radius: 4px !important;
+    padding: 10px !important;
+    color: white !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-family: inherit !important;
+}
+
+.footer-lp__form input:focus,
+.footer-lp__form textarea:focus {
+    border-color: #0072ED !important;
+    outline: none !important;
+}
+
+.footer-lp__submit {
+    background-color: #0072ED !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+    transition: background-color 0.2s !important;
+}
+
+.footer-lp__submit:disabled {
+    background-color: #555 !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+}
+
+.footer-lp__submit:not(:disabled):hover {
+    background-color: #005bbf !important;
+}
+
+/* ── ERRORES ── */
+.error-msg {
+    color: #ff4d4d !important;
+    font-size: 11px !important;
+    margin-top: 4px !important;
+    display: none;
+}
+
+.u-error-show {
+    display: block !important;
+}
+
+/* ── MENSAJE DE ÉXITO ── */
+.footer-lp__success {
+    display: none;
+    background-color: #1b4d1b !important;
+    color: #d4ffd4 !important;
+    padding: 15px !important;
+    border-radius: 4px !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+}
+
+.footer-lp__success--visible {
+    display: block !important;
+    animation: fadeIn 0.5s ease-in !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── DIVISOR ── */
 .footer-lp__divider {
     border: 0 !important;
-    border-top: 1px solid #333333 !important; 
+    border-top: 1px solid #333333 !important;
     width: 100% !important;
     margin: 24px 0 !important;
 }
 
-/* BLOQUE INFERIOR */
+/* ── COPYRIGHT + SOCIAL ── */
 .footer-lp__bottom {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-
-    @media (max-width: 393px) {
-        flex-direction: column-reverse !important;
-        gap: 24px !important;
-    }
 }
 
 .footer-lp__copyright {
@@ -165,98 +278,34 @@
     transform: translateY(-3px) !important;
 }
 
-/* FORMULARIO EN FOOTER */
-.footer-lp__form-container {
-    max-width: 350px !important;
-    flex: 1 !important;
-}
-
-.footer-lp__form {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 15px !important;
-}
-
-.footer-lp__form--hidden {
-    display: none !important;
-}
-
-.form-group {
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.footer-lp__form input, 
-.footer-lp__form textarea {
-    background: #2a2a2a !important;
-    border: 1px solid #444 !important;
-    border-radius: 4px !important;
-    padding: 10px !important;
-    color: white !important;
-    font-size: 14px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    font-family: inherit !important;
-}
-
-.footer-lp__form input:focus, 
-.footer-lp__form textarea:focus {
-    border-color: #0072ED !important;
-    outline: none !important;
-}
-
-.footer-lp__submit {
-    background-color: #0072ED !important;
-    color: white !important;
-    border: none !important;
-    padding: 12px !important;
-    border-radius: 4px !important;
-    cursor: pointer !important;
-    font-weight: bold !important;
-}
-
-.footer-lp__submit:disabled {
-    background-color: #555 !important;
-    cursor: not-allowed !important;
-    opacity: 0.6 !important;
-}
-
-/* Mensajes de Error */
-.error-msg {
-    color: #ff4d4d !important;
-    font-size: 11px !important;
-    margin-top: 5px !important;
-    display: none;
-}
-
-.u-error-show {
-    display: block !important;
-}
-
-/* Mensaje de Éxito */
-.footer-lp__success {
-    display: none;
-    background-color: #1b4d1b !important;
-    color: #d4ffd4 !important;
-    padding: 15px !important;
-    border-radius: 4px !important;
-    text-align: center !important;
-    margin-top: 10px !important;
-}
-
-.footer-lp__success--visible {
-    display: block !important;
-    animation: fadeIn 0.5s ease-in !important;
-}
-
+/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-    .footer-lp__top {
+    .footer-lp__row--bottom {
         flex-direction: column !important;
-        gap: 40px !important;
     }
-    .footer-lp__form-container, 
-    .footer-lp__info {
-        max-width: 100% !important;
+
+    .footer-lp__form-container {
         width: 100% !important;
+    }
+
+    .footer-lp__map-section iframe {
+        min-height: 250px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-lp__row--top {
+        flex-direction: column !important;
+    }
+}
+
+@media (max-width: 393px) {
+    .footer-lp__links {
+        display: none !important;
+    }
+
+    .footer-lp__bottom {
+        flex-direction: column-reverse !important;
+        gap: 24px !important;
     }
 }

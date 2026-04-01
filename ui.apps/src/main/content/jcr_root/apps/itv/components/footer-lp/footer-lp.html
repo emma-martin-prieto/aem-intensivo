@@ -4,7 +4,7 @@
 <footer class="footer-lp">
     <div class="footer-lp__container">
         
-        <div class="footer-lp__top">
+        <div class="footer-lp__row footer-lp__row--top">
             <div class="footer-lp__info">
                 <h2 class="footer-lp__title">BuyCar</h2>  
                 <div class="footer-lp__text-authorable">
@@ -32,7 +32,11 @@
                     <sly data-sly-resource="${'navigation-footer' @ resourceType='itv/components/navigation'}"></sly>
                 </nav>
             </div>
-
+        </div>
+        <div class="footer-lp__row footer-lp__row--bottom"> 
+           <div class="footer-lp__map-section" data-sly-test="${properties.mapUrl}">
+                ${properties.mapUrl @ context='unsafe'}
+            </div> 
             <div class="footer-lp__form-container">
                 <h2 class="footer-lp__title">${properties.formTitle || 'Contáctanos'}</h2>
                 <form id="footerContactForm" class="footer-lp__form">
@@ -59,7 +63,7 @@
                 </div>
             </div>
         </div>
-
+        
         <hr class="footer-lp__divider">
 
         <div class="footer-lp__bottom">
@@ -74,6 +78,5 @@
                 </sly>
             </div>
         </div>
-
     </div>
 </footer>
