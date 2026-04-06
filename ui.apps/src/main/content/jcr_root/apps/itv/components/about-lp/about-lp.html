@@ -1,0 +1,57 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<section class="about-lp" id="quienes-somos">
+    <div class="about-lp__container">
+
+        <div class="about-lp__header">
+            <span class="about-lp__tag">${properties.tag || 'Nuestra Historia'}</span>
+
+            <div class="about-lp__title-authorable">
+                <sly data-sly-resource="${'about-title' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+            </div>
+
+            <div class="about-lp__intro-authorable">
+                <sly data-sly-resource="${'about-intro' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+            </div>
+        </div>
+
+        <div class="about-lp__content">
+            <div class="about-lp__text">
+                <div class="about-lp__text-block">
+                    <sly data-sly-resource="${'about-text-left' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                </div>
+            </div>
+
+            <div class="about-lp__cards">
+                <article class="about-lp__card">
+                    <div class="about-lp__card-title">
+                        <sly data-sly-resource="${'vision-title' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                    </div>
+                    <div class="about-lp__card-text">
+                        <sly data-sly-resource="${'vision-text' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                    </div>
+                </article>
+
+                <article class="about-lp__card">
+                    <div class="about-lp__card-title">
+                        <sly data-sly-resource="${'mission-title' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                    </div>
+                    <div class="about-lp__card-text">
+                        <sly data-sly-resource="${'mission-text' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                    </div>
+                </article>
+
+                <article class="about-lp__card">
+                    <div class="about-lp__card-title">
+                        <sly data-sly-resource="${'values-title' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                    </div>
+                    <div class="about-lp__card-text">
+                        <sly data-sly-resource="${'values-text' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </div>
+</section>
