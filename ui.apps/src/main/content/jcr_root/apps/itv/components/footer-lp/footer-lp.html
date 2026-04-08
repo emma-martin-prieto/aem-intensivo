@@ -33,36 +33,6 @@
                 </nav>
             </div>
         </div>
-        <div class="footer-lp__row footer-lp__row--bottom"> 
-           <div class="footer-lp__map-section" data-sly-test="${properties.mapUrl}">
-                ${properties.mapUrl @ context='unsafe'}
-            </div> 
-            <div class="footer-lp__form-container">
-                <h2 class="footer-lp__title">${properties.formTitle || 'Contáctanos'}</h2>
-                <form id="footerContactForm" class="footer-lp__form">
-                    <div class="form-group">
-                        <input type="text" id="formName" placeholder="Nombre completo" required>
-                        <span class="error-msg" id="nameError">Solo se permiten letras</span>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="formEmail" placeholder="Tu Email" required>
-                        <span class="error-msg" id="emailError">Email no válido</span>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="formPhone" placeholder="Teléfono (opcional)">
-                        <span class="error-msg" id="phoneError">Solo se permiten números</span>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="formMessage" placeholder="Tu consulta (mín. 20 caracteres)" rows="3" required></textarea>
-                        <span class="error-msg" id="messageError">Debe tener entre 20 y 300 caracteres</span>
-                    </div>
-                    <button type="submit" id="formSubmit" class="footer-lp__submit" disabled>Enviar</button>
-                </form>
-                <div id="formResponse" class="footer-lp__success">
-                    ${properties.successMessage || '¡Gracias! Nos pondremos en contacto pronto.'}
-                </div>
-            </div>
-        </div>
         
         <hr class="footer-lp__divider">
 

@@ -6,8 +6,10 @@
     <ul class="header-lp__list" 
         data-sly-list.item="${nav.items}">
         
-        <li class="header-lp__item ${item.active ? 'header-lp__item--active' : ''}">
-            <a href="${item.url}.html" 
+        <li class="header-lp__item 
+            ${(item.active || (currentPage.name == 'landing-page' && item.title == 'Mercedes')) 
+            ? 'header-lp__item--active' : ''}">
+            <a href="${item.URL}" 
                class="header-lp__link" 
                aria-current="${item.active ? 'page' : ''}">
                ${item.title}

@@ -1,27 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
     xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Brands"
     sling:resourceType="cq/gui/components/authoring/dialog">
+
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
+
         <items jcr:primaryType="nt:unstructured">
+
             <brands
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-    composite="{Boolean}false"
-    fieldLabel="Logos de marcas">
-    <field
-        jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-        name="./brands"
-        rootPath="/content/dam"
-        nodeTypes="dam:Asset"
-        fieldLabel="Ruta del Logo"/>
-</brands>
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true"
+                fieldLabel="Logos de marcas">
+
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./brands">
+
+                    <items jcr:primaryType="nt:unstructured">
+
+                        <imagePath
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            name="./imagePath"
+                            rootPath="/content/dam/itv"
+                            nodeTypes="[dam:Asset]"
+                            fieldLabel="Ruta del logo"/>
+
+                        <linkUrl
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            name="./linkUrl"
+                            fieldLabel="URL del enlace"
+                            emptyText="http:// o https://"/>
+
+                    </items>
+                </field>
+            </brands>
         </items>
     </content>
 </jcr:root>

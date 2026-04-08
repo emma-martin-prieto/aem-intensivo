@@ -8,19 +8,14 @@
           sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <column jcr:primaryType="nt:unstructured" 
-                    sling:resourceType="granite/ui/components/coral/foundation/container">
-                <items jcr:primaryType="nt:unstructured">
-                    <logoPath
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        fieldLabel="Ruta del Logotipo"
-                        name="./logoPath"
-                        rootPath="/content/dam"/>
-                </items>
-            </column>
+            <logoPath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Ruta del Logotipo"
+                name="./logoPath"
+                rootPath="/content/dam"/>
         </items>
     </content>
 </jcr:root>

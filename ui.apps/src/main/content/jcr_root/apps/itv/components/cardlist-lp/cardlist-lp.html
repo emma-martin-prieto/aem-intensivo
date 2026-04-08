@@ -4,7 +4,7 @@
 
 <div class="cq-placeholder" data-sly-test="${!model.cards}" data-emptytext="Card List Carrusel"></div>
 
-<div class="cardlist-lp-wrapper swiper" data-sly-test="${model.cards}">
+<div class="cardlist-lp-wrapper swiper js-cardlist-swiper" data-sly-test="${model.cards}">
   
   <div class="swiper-wrapper">
     <sly data-sly-list.card="${model.cards}">
@@ -27,6 +27,4 @@
   </div>
 
   <div class="swiper-pagination"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
 </div>

@@ -6,73 +6,49 @@
           jcr:primaryType="nt:unstructured"
           jcr:title="Configuración Footer"
           sling:resourceType="cq/gui/components/authoring/dialog">
+
     <content
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
         <items jcr:primaryType="nt:unstructured">
-            <column jcr:primaryType="nt:unstructured" 
-                    sling:resourceType="granite/ui/components/coral/foundation/container">
-                <items jcr:primaryType="nt:unstructured">
-                    <logoPath
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        fieldLabel="Ruta del Logotipo"
-                        name="./logoPath"
-                        rootPath="/content/dam"/>
 
-                    <socialLinks
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                        fieldLabel="Redes Sociales"
-                        composite="{Boolean}true">
-                        <field
+            <logoPath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Ruta del Logotipo"
+                name="./logoPath"
+                rootPath="/content/dam"/>
+
+            <socialLinks
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                fieldLabel="Redes Sociales"
+                composite="{Boolean}true">
+
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./socialLinks">
+
+                    <items jcr:primaryType="nt:unstructured">
+
+                        <icon
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container"
-                            name="./socialLinks">
-                            <items jcr:primaryType="nt:unstructured">
-                                <icon
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                    fieldLabel="Icono (DAM)"
-                                    name="./iconPath"
-                                    rootPath="/content/dam"/>
-                                <url
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Enlace"
-                                    name="./link"/>
-                            </items>
-                        </field>
-                    </socialLinks>
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Icono (DAM)"
+                            name="./iconPath"
+                            rootPath="/content/dam"/>
 
-                    <formTitle
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Título del Formulario"
-                        name="./formTitle"
-                        emptyText="Contáctanos"/>
-                    
-                    <successMessage
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Mensaje de éxito del formulario"
-                        name="./successMessage"
-                        emptyText="¡Gracias! Nos pondremos en contacto pronto."/>
+                        <url
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Enlace"
+                            name="./link"/>
 
-                    <copyrightText
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Texto de Copyright"
-                        name="./copyrightText"
-                        emptyText="© 2026 BuyCar - Todos los derechos reservados"/>
-                    
-                    <mapUrl jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldDescription="Pega el src del iframe de Google My Maps"
-                        fieldLabel="URL del Mapa de Sedes"
-                        name="./mapUrl"/>
-                </items>
-            </column>
+                    </items>
+                </field>
+            </socialLinks>
         </items>
     </content>
 </jcr:root>

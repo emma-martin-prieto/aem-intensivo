@@ -1,23 +1,42 @@
 import Swiper from 'swiper/bundle';
+
 function initCardSwiper() {
-    const container = document.querySelector('.cardlist-lp-wrapper.swiper');
-    
-    if (container) {
-        new Swiper(container, {
-            slidesPerView: 'auto', // Esto permite que el ancho lo defina tu CSS
-            spaceBetween: 26,      // Espacio entre tarjetas
-            loop: false,           // Cambia a true si quieres carrusel infinito
-            grabCursor: true,      // Cambia el cursor a una mano
-            
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
+    const swipers = document.querySelectorAll('.js-cardlist-swiper');
+
+    if (!swipers.length) {
+        return;
     }
+
+    swipers.forEach((element) => {
+        new Swiper(element, {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+            loop: true,
+            grabCursor: true,
+            speed: 800,
+            loopAdditionalSlides: 6,
+
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+
+            pagination: {
+                el: element.querySelector('.swiper-pagination'),
+                clickable: true
+            },
+
+            breakpoints: {
+                769: {
+                    spaceBetween: 26,
+                },
+                1201: {
+                    spaceBetween: 56,
+                }
+            }
+        });
+    });
 }
+
 document.addEventListener('DOMContentLoaded', initCardSwiper);

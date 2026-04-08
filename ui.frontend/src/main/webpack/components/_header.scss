@@ -89,27 +89,13 @@ header.header-lp {
     line-height: 1 !important;
 }
 
-/* Estilo para el estado activo*/
-.header-lp__item:first-child .header-lp__link {
+/* Hover */
+.header-lp__link:hover {
     border-bottom: 2px solid #ffffff !important;
-    display: inline-block !important;
-    padding-bottom: 8px !important;
-    color: #ffffff !important;
 }
 
-.header-lp__item {
-    color: #ffffff !important;
-    font-size: 16px !important;
-    text-transform: capitalize !important;
-    font-weight: 500 !important;
-    text-decoration: none !important;
-    cursor: pointer !important;
-    padding-bottom: 8px !important;
-    border-bottom: 2px solid transparent !important;
-    transition: border-color 0.3s;
-}
-
-.header-lp__item--active {
+/* Activo REAL (AEM) */
+.header-lp__item--active .header-lp__link {
     border-bottom: 2px solid #ffffff !important;
 }
 

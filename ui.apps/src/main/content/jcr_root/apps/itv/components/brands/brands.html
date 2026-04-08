@@ -4,15 +4,26 @@
 <section class="brands">
     <div class="brands__container">
         <div class="brands__grid">
-            <sly data-sly-list.brand="${properties.brands}">
-                <div class="brands__item">
-                    <img src="${brand @ context='uri'}" alt="Logo de la Marca" class="brands__img"/>
-                </div>
+            <sly data-sly-use.brandNodes="${resource.path}/brands">
+                <sly data-sly-list.item="${brandNodes.listChildren}">
+                    <div class="brands__item" data-sly-test="${item.imagePath}">
+                        <a href="${item.linkUrl}" 
+                           rel="noopener noreferrer"
+                           data-sly-test="${item.linkUrl}">
+                        <img src="${item.imagePath}" alt="Logo de la Marca" class="brands__img"/>
+                        </a>
+
+                        <img data-sly-test="${!item.linkUrl}"
+                             src="${item.imagePath}"
+                             alt="Logo de la Marca"
+                             class="brands__img"/>
+                    </div>
+                </sly>
             </sly>
         </div>
     </div>
-</section>    
+</section>
 
-<sly data-sly-test="${wcmmode.edit && !properties.brands}">
+<sly data-sly-test="${wcmmode.edit && !brandNodes}">
     <div class="cq-placeholder" data-emptytext="Mosaico de Marcas: Configura logos en el diálogo"></div>
 </sly>

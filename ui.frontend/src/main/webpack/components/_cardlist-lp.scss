@@ -4,15 +4,14 @@
     justify-content: center;
     box-sizing: border-box;
     margin-top: 69px !important;
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
 
-    // --- CARD VERTICAL (381x495) ---
     .cardlist__card.vertical {
-        flex: 0 0 381px; 
+        flex: 0 0 381px;
         width: 381px;
         height: 495px;
         background: #F9F9F9;
-        padding: 16px;      
+        padding: 16px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -25,33 +24,33 @@
             height: 256px;
             overflow: hidden;
             border-radius: 8px;
-            
-            .cardlist__image { 
-                width: 100%; 
-                height: 100%; 
-                object-fit: cover; 
+
+            .cardlist__image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
-        
+
         .cardlist__content {
             padding: 0;
-            display: flex; 
-            flex-direction: column; 
+            display: flex;
+            flex-direction: column;
             flex-grow: 1;
 
-            .cardlist__title { 
-                font-size: 32px; 
+            .cardlist__title {
+                font-size: 32px;
                 font-weight: 400;
                 color: #000000;
-                margin: 16px 0 8px 0; 
+                margin: 16px 0 8px 0;
                 line-height: 1.1;
                 letter-spacing: -0.5px;
             }
 
-            .cardlist__description { 
-                font-size: 14px; 
+            .cardlist__description {
+                font-size: 14px;
                 font-weight: 300;
-                color: #6D6D6D; 
+                color: #6D6D6D;
                 margin: 0;
                 line-height: 1.4;
                 display: block !important;
@@ -59,7 +58,6 @@
             }
         }
 
-        // --- BOTONES ---
         .cardlist__button-wrapper {
             margin-top: 22px;
             margin-bottom: 6px;
@@ -96,24 +94,36 @@
         }
     }
 
-    // --- CONFIGURACIÓN SWIPER ---
     &.swiper {
         overflow: hidden;
         position: relative;
+        padding-bottom: 40px;
 
         .swiper-wrapper {
             display: flex;
             flex-direction: row !important;
             flex-wrap: nowrap !important;
+            align-items: stretch;
         }
 
         .cardlist__card.swiper-slide {
             flex-shrink: 0;
-            height: 495px; // Mantenemos la altura fija del diseño
+            height: 495px;
         }
 
-        .swiper-button-next, .swiper-button-prev {
-            color: #0072ED;
+        .swiper-pagination {
+            bottom: 0 !important;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: #c4c4c4;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #0072ED;
         }
     }
 }
