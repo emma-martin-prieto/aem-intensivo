@@ -1,46 +1,20 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories='itv.site'}"/>
 
-<!-- Vista visible para AUTHOR -->
-<sly data-sly-test="${wcmmode.edit}">
-    <div class="cookie-banner-author">
-        <div class="cookie-banner-author__label">Cookie Banner</div>
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__content">
+        <p class="cookie-banner__text">
+            Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de la web.
+            Puedes aceptar o rechazar las cookies analíticas.
+        </p>
 
-        <div class="cookie-banner-author__content">
-            <p class="cookie-banner-author__text">
-                Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de la web.
-                Puedes aceptar o rechazar las cookies analíticas.
-            </p>
-
-            <div class="cookie-banner-author__actions">
-                <button type="button" class="cookie-banner__btn cookie-banner__btn--secondary">
-                    Rechazar
-                </button>
-                <button type="button" class="cookie-banner__btn cookie-banner__btn--primary">
-                    Aceptar
-                </button>
-            </div>
+        <div class="cookie-banner__actions">
+            <button type="button" id="cookieReject" class="cookie-banner__btn cookie-banner__btn--secondary">
+                Rechazar
+            </button>
+            <button type="button" id="cookieAccept" class="cookie-banner__btn cookie-banner__btn--primary">
+                Aceptar
+            </button>
         </div>
     </div>
-</sly>
-
-<!-- Banner real -->
-<sly data-sly-test="${!wcmmode.edit}">
-    <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-banner__content">
-            <p class="cookie-banner__text">
-                Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de la web.
-                Puedes aceptar o rechazar las cookies analíticas.
-            </p>
-
-            <div class="cookie-banner__actions">
-                <button type="button" id="cookieReject" class="cookie-banner__btn cookie-banner__btn--secondary">
-                    Rechazar
-                </button>
-                <button type="button" id="cookieAccept" class="cookie-banner__btn cookie-banner__btn--primary">
-                    Aceptar
-                </button>
-            </div>
-        </div>
-    </div>
-</sly>
+</div>

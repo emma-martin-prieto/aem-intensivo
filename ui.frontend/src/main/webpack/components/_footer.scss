@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden !important;
+}
+
 .footer-lp {
     background-color: #1a1a1a !important;
     color: #ffffff !important;
@@ -6,8 +10,6 @@
     padding: 40px 0 !important;
     box-sizing: border-box !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    box-shadow: 0 0 0 100vmax #1a1a1a !important;
-    clip-path: inset(0 -100vmax) !important;
 }
 
 .footer-lp__container {

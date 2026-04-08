@@ -7,6 +7,10 @@
     overflow: visible !important;
 }
 
+html, body {
+    overflow-x: hidden !important;
+}
+
 /* 2. ESTRUCTURA BASE */
 header.header-lp {
     background-color: #000000 !important;
@@ -16,8 +20,6 @@ header.header-lp {
     width: 100% !important;
     position: relative;
     z-index: 10;
-    box-shadow: 0 0 0 100vmax #000000 !important;
-    clip-path: inset(0 -100vmax) !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     overflow: visible !important;
 }

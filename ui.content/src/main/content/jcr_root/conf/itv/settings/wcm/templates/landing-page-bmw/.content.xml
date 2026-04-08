@@ -2,10 +2,10 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2026-04-07T12:41:00.489+02:00"
+        cq:lastModified="{Date}2026-04-08T10:39:56.388+02:00"
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/itv/settings/wcm/template-types/page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Landing Page"
+        jcr:title="Landing Page BMW"
         status="enabled"/>
 </jcr:root>
