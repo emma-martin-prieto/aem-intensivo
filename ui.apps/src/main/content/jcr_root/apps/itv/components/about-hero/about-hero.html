@@ -1,0 +1,53 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<section class="about-hero">
+    <div class="about-hero__container">
+
+        <div class="about-hero__content">
+            <span class="about-hero__tag">${properties.tag || 'Sobre BuyCar'}</span>
+
+            <h1 class="about-hero__title">
+                ${properties.title || 'Pasión por la automoción, confianza en cada decisión'}
+            </h1>
+
+            <p class="about-hero__text">
+                ${properties.description || 'En BuyCar trabajamos con diferentes marcas para ofrecer una experiencia de compra clara, cercana y adaptada a cada cliente. Queremos ayudarte a encontrar el vehículo perfecto con asesoramiento experto y una atención realmente personalizada.'}
+            </p>
+
+            <div class="about-hero__stats">
+                <div class="about-hero__stat">
+                    <span class="about-hero__stat-number">${properties.statOneNumber || '+10'}</span>
+                    <span class="about-hero__stat-label">${properties.statOneLabel || 'marcas disponibles'}</span>
+                </div>
+
+                <div class="about-hero__stat">
+                    <span class="about-hero__stat-number">${properties.statTwoNumber || '1'}</span>
+                    <span class="about-hero__stat-label">${properties.statTwoLabel || 'equipo a tu lado'}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-hero__media">
+            <img src="${properties.imagePath}" alt="${properties.imageAlt || 'Equipo BuyCar'}" class="about-hero__image" data-sly-test="${properties.imagePath}"/>
+
+            <div class="about-hero__floating-card">
+                <span class="about-hero__floating-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0m10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                        <path d="M6 1a1 1 0 0 0-.8.4L3.6 3.5H2a2 2 0 0 0-2 2V9a2 2 0 0 0 2 2h.17a3 3 0 0 0 5.66 0h.34a3 3 0 0 0 5.66 0H14a2 2 0 0 0 2-2V6.5a2 2 0 0 0-.59-1.41l-2.5-2.5A2 2 0 0 0 11.5 2H10.4l-.6-1.2A1 1 0 0 0 8.9.2h-2.9Zm.5 1h2.2l.5 1H6l.5-1Z"/>
+                    </svg>
+                </span>
+                <div>
+                    <strong>${properties.floatingTitle || 'Experiencia multimarca'}</strong>
+                    <p>${properties.floatingText || 'Una forma más cómoda y visual de encontrar tu próximo coche.'}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<sly data-sly-test="${wcmmode.edit && !properties.title}">
+    <div class="cq-placeholder" data-emptytext="About Hero"></div>
+</sly>

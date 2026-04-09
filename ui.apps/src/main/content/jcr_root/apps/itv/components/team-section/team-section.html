@@ -1,0 +1,52 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<section class="team-section">
+    <div class="team-section__container">
+
+        <div class="team-section__header">
+            <span class="team-section__tag">${properties.tag || 'Nuestro equipo'}</span>
+            <h2 class="team-section__title">
+                ${properties.title || 'Personas que hacen posible la experiencia BuyCar'}
+            </h2>
+            <p class="team-section__intro">
+                ${properties.intro || 'Detrás de BuyCar hay un equipo que combina experiencia, pasión por la automoción y una atención cercana para acompañarte en cada paso.'}
+            </p>
+        </div>
+
+        <div class="team-section__grid">
+
+            <article class="team-section__card">
+                <img src="${properties.member1Image}" alt="${properties.member1Name || 'Miembro del equipo'}" class="team-section__image" data-sly-test="${properties.member1Image}"/>
+                <div class="team-section__content">
+                    <h3>${properties.member1Name || 'Laura Gómez'}</h3>
+                    <span class="team-section__role">${properties.member1Role || 'Dirección comercial'}</span>
+                    <p>${properties.member1Text || 'Coordina la estrategia comercial y trabaja para que cada cliente viva una experiencia clara, cercana y de confianza.'}</p>
+                </div>
+            </article>
+
+            <article class="team-section__card">
+                <img src="${properties.member2Image}" alt="${properties.member2Name || 'Miembro del equipo'}" class="team-section__image" data-sly-test="${properties.member2Image}"/>
+                <div class="team-section__content">
+                    <h3>${properties.member2Name || 'Carlos Martín'}</h3>
+                    <span class="team-section__role">${properties.member2Role || 'Asesor de ventas'}</span>
+                    <p>${properties.member2Text || 'Acompaña a cada cliente en la búsqueda del vehículo ideal, resolviendo dudas y ofreciendo una atención personalizada.'}</p>
+                </div>
+            </article>
+
+            <article class="team-section__card">
+                <img src="${properties.member3Image}" alt="${properties.member3Name || 'Miembro del equipo'}" class="team-section__image" data-sly-test="${properties.member3Image}"/>
+                <div class="team-section__content">
+                    <h3>${properties.member3Name || 'Andrea Ruiz'}</h3>
+                    <span class="team-section__role">${properties.member3Role || 'Atención al cliente'}</span>
+                    <p>${properties.member3Text || 'Se encarga de que cada contacto con BuyCar sea ágil, cómodo y cercano, cuidando cada detalle de la experiencia.'}</p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<sly data-sly-test="${wcmmode.edit && !properties.title}">
+    <div class="cq-placeholder" data-emptytext="Team Section"></div>
+</sly>

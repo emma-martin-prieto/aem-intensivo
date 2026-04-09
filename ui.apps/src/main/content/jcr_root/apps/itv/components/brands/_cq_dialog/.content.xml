@@ -13,6 +13,27 @@
 
         <items jcr:primaryType="nt:unstructured">
 
+            <tag
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Etiqueta"
+                name="./tag"
+                emptyText="Marcas con las que trabajamos"/>
+
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título"
+                name="./title"
+                emptyText="Una selección pensada para ofrecerte más opciones"/>
+
+            <intro
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto introductorio"
+                name="./intro"
+                emptyText="En BuyCar reunimos diferentes marcas para que puedas descubrir, comparar y elegir el vehículo que mejor encaja contigo."/>
+
             <brands
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
@@ -44,6 +65,7 @@
                     </items>
                 </field>
             </brands>
+
         </items>
     </content>
 </jcr:root>

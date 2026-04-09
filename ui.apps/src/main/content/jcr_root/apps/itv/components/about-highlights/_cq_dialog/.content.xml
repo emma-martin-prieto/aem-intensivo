@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="About Highlights"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <tag
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Etiqueta"
+                name="./tag"
+                emptyText="Nuestra esencia"/>
+
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título"
+                name="./title"
+                emptyText="Lo que hace diferente a BuyCar"/>
+
+            <intro
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto introductorio"
+                name="./intro"
+                emptyText="Texto corto"/>
+
+            <card1Title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título tarjeta 1"
+                name="./card1Title"/>
+
+            <card1Text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto tarjeta 1"
+                name="./card1Text"/>
+
+            <card2Title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título tarjeta 2"
+                name="./card2Title"/>
+
+            <card2Text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto tarjeta 2"
+                name="./card2Text"/>
+
+            <card3Title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título tarjeta 3"
+                name="./card3Title"/>
+
+            <card3Text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto tarjeta 3"
+                name="./card3Text"/>
+
+            <card4Title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título tarjeta 4"
+                name="./card4Title"/>
+
+            <card4Text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto tarjeta 4"
+                name="./card4Text"/>
+
+        </items>
+    </content>
+</jcr:root>

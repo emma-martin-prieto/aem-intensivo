@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('footerContactForm');
     const submitBtn = document.getElementById('formSubmit');
     const responseMsg = document.getElementById('formResponse');
+    const debugBox = document.getElementById('formDebug');
 
     if (!form || !submitBtn || !responseMsg) {
         return;
@@ -55,7 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        const submittedData = {
+            nombre: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            telefono: phoneInput.value.trim(),
+            mensaje: messageInput.value.trim()
+        };
+
+        console.log('Datos enviados desde Contact Section:', submittedData);
+
         form.classList.add('contact-section-lp__form--hidden');
         responseMsg.classList.add('contact-section-lp__success--visible');
+
+        if (debugBox) {
+            debugBox.hidden = false;
+            debugBox.innerHTML = `
+                <h4>Datos introducidos</h4>
+                <p><strong>Nombre:</strong> ${submittedData.nombre}</p>
+                <p><strong>Email:</strong> ${submittedData.email}</p>
+                <p><strong>Teléfono:</strong> ${submittedData.telefono || 'No indicado'}</p>
+                <p><strong>Mensaje:</strong> ${submittedData.mensaje}</p>
+            `;
+        }
     });
 });

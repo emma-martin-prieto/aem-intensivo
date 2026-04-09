@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Team Section"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <tag
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Etiqueta"
+                name="./tag"
+                emptyText="Nuestro equipo"/>
+
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título"
+                name="./title"
+                emptyText="Personas que hacen posible la experiencia BuyCar"/>
+
+            <intro
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto introductorio"
+                name="./intro"/>
+
+            <member1Image
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Imagen miembro 1"
+                name="./member1Image"
+                rootPath="/content/dam"
+                nodeTypes="[dam:Asset]"/>
+
+            <member1Name
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Nombre miembro 1"
+                name="./member1Name"/>
+
+            <member1Role
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Cargo miembro 1"
+                name="./member1Role"/>
+
+            <member1Text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto miembro 1"
+                name="./member1Text"/>
+
+            <member2Image
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Imagen miembro 2"
+                name="./member2Image"
+                rootPath="/content/dam"
+                nodeTypes="[dam:Asset]"/>
+
+            <member2Name
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Nombre miembro 2"
+                name="./member2Name"/>
+
+            <member2Role
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Cargo miembro 2"
+                name="./member2Role"/>
+
+            <member2Text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto miembro 2"
+                name="./member2Text"/>
+
+            <member3Image
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Imagen miembro 3"
+                name="./member3Image"
+                rootPath="/content/dam"
+                nodeTypes="[dam:Asset]"/>
+
+            <member3Name
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Nombre miembro 3"
+                name="./member3Name"/>
+
+            <member3Role
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Cargo miembro 3"
+                name="./member3Role"/>
+
+            <member3Text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto miembro 3"
+                name="./member3Text"/>
+
+        </items>
+    </content>
+</jcr:root>

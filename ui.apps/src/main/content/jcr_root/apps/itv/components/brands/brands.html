@@ -3,14 +3,23 @@
 
 <section class="brands">
     <div class="brands__container">
+
+        <div class="brands__header">
+            <span class="brands__tag">${properties.tag || 'Marcas con las que trabajamos'}</span>
+            <h2 class="brands__title">${properties.title || 'Una selección pensada para ofrecerte más opciones'}</h2>
+            <p class="brands__intro">
+                ${properties.intro || 'En BuyCar reunimos diferentes marcas para que puedas descubrir, comparar y elegir el vehículo que mejor encaja contigo.'}
+            </p>
+        </div>
+
         <div class="brands__grid">
             <sly data-sly-use.brandNodes="${resource.path}/brands">
                 <sly data-sly-list.item="${brandNodes.listChildren}">
                     <div class="brands__item" data-sly-test="${item.imagePath}">
-                        <a href="${item.linkUrl}" 
-                           rel="noopener noreferrer"
+                        <a href="${item.linkUrl}"
+                           class="brands__link"
                            data-sly-test="${item.linkUrl}">
-                        <img src="${item.imagePath}" alt="Logo de la Marca" class="brands__img"/>
+                            <img src="${item.imagePath}" alt="Logo de la Marca" class="brands__img"/>
                         </a>
 
                         <img data-sly-test="${!item.linkUrl}"
