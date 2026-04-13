@@ -1,0 +1,46 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<section class="bmw-hero">
+    <sly data-sly-test="${!wcmmode.edit && properties.backgroundVideo}">
+        <video id="bmwHeroVideo"
+               class="bmw-hero__video" 
+               autoplay 
+               muted 
+               loop 
+               playsinline 
+               preload="auto"
+               poster="${properties.posterImage @ context='uri'}">
+            <source src="${properties.backgroundVideo @ context='uri'}" type="video/mp4">
+        </video>
+    </sly>
+
+    <sly data-sly-test="${properties.backgroundImage}">
+        <div class="bmw-hero__bg-image" 
+             style="background-image: url('${properties.backgroundImage @ context='uri'}');"></div>
+    </sly>
+
+    <div class="bmw-hero__overlay"></div>
+
+    <div class="bmw-hero__container">
+        <div class="bmw-hero__content">
+            <span class="bmw-hero__eyebrow">${properties.eyebrow || 'BMW PREMIUM SELECTION'}</span>
+            <h1 class="bmw-hero__title">${properties.title || 'BMW. Pura emoción al volante.'}</h1>
+            <p class="bmw-hero__subtitle">${properties.subtitle || 'Explora una selección BMW diseñada para quienes buscan innovación.'}</p>
+            
+            <div class="bmw-hero__actions">
+                <sly data-sly-test="${properties.primaryCtaLink}">
+                    <button onclick="window.location.href='${properties.primaryCtaLink @ context='uri'}'" 
+                            class="bmw-hero__btn bmw-hero__btn--primary">
+                        ${properties.primaryCtaText || 'Ver modelos'}
+                    </button>
+                </sly>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Placeholder SOLO cuando NO hay título NI imagen de fondo-->
+<sly data-sly-test="${wcmmode.edit && !properties.title && !properties.backgroundImage && !properties.backgroundVideo}">
+    <div class="cq-placeholder" data-emptytext="BMW Hero - Configura título o imagen/video de fondo"></div>
+</sly>

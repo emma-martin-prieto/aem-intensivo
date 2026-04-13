@@ -1,0 +1,231 @@
+    :root {
+        --bmw-blue-electric: #1C69D4;
+        --bmw-blue-dark: #0653B6; 
+        --bmw-black: #262626; 
+        --bmw-white: #FFFFFF;
+        --bmw-grey-light: #F6F6F6;
+        --bmw-grey-border: #EAEAEA;
+        --bmw-grey-text: #666666; 
+        --bmw-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        --card-border-radius: 4px;
+        --card-box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    }
+
+    /* CONTENEDOR PRINCIPAL GRUPO */
+    .bmw-elite-group {
+        background-color: var(--bmw-grey-light);
+        padding: 80px 20px;
+        font-family: var(--bmw-font-family);
+    }
+
+    /* ENVOLTORIO GRID RESPONSIVO */
+    .bmw-elite-group__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto;
+        align-items: stretch;
+    }
+
+    /* --- LA CARD ELITE (Glassmorphism sutil) --- */
+    .bmw-elite-card {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid var(--bmw-grey-border);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--card-box-shadow);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        backdrop-filter: blur(5px); /* Efecto cristal sutil */
+        position: relative;
+    }
+
+    /* Efecto Hover Elite */
+    .bmw-elite-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        border-color: rgba(28, 105, 212, 0.3); /* Borde azul muy suave al hover */
+    }
+
+    /* CONTENEDOR DE IMAGEN CON OVERLAY */
+    .bmw-elite-card__image-container {
+        width: 100%;
+        height: 240px;
+        position: relative;
+        background: radial-gradient(circle at center, #ffffff 0%, #f0f0f0 100%); /* Fondo imagen dinámico */
+        overflow: hidden;
+    }
+
+    .bmw-elite-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Para que el coche se vea entero y nítido */
+        padding: 30px;
+        transition: transform 0.5s ease;
+    }
+
+    /* Zoom suave de imagen al hover */
+    .bmw-elite-card:hover .bmw-elite-card__image {
+        transform: scale(1.03);
+    }
+
+    /* Overlay degradado sobre la imagen */
+    .bmw-elite-card__image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    }
+
+    /* CONTENIDO TEXTUAL DE LA CARD */
+    .bmw-elite-card__content {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    /* ETIQUETA SUPERIOR */
+    .bmw-elite-card__tag {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--bmw-grey-text);
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    /* TÍTULO DEL MODELO (Original y Elegante) */
+    .bmw-elite-card__title {
+        font-size: 26px;
+        font-weight: 300; /* Más fino = más premium */
+        color: var(--bmw-black);
+        margin: 0;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+    }
+
+    /* SUBTÍTULO/MOTORIZACIÓN */
+    .bmw-elite-card__subtitle {
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--bmw-grey-text);
+        margin: 6px 0 20px 0;
+    }
+
+    /* DATOS TÉCNICOS DESTACADOS (Original) */
+    .bmw-elite-card__tech-data {
+        display: flex;
+        gap: 20px;
+        border-top: 1px solid var(--bmw-grey-border);
+        border-bottom: 1px solid var(--bmw-grey-border);
+        padding: 15px 0;
+        margin-bottom: 25px;
+    }
+
+    .bmw-elite-card__data-item {
+        flex: 1;
+        text-align: center;
+    }
+
+    .bmw-elite-card__data-value {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--bmw-black);
+        display: block;
+    }
+
+    .bmw-elite-card__data-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: var(--bmw-grey-text);
+        letter-spacing: 1px;
+        margin-top: 2px;
+        display: block;
+    }
+
+    /* SECCIÓN DE PRECIO MODERNA */
+    .bmw-elite-card__price-section {
+        margin-top: auto; /* Empuja el precio hacia abajo */
+        margin-bottom: 30px;
+        text-align: right;
+    }
+
+    .bmw-elite-card__price-main {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--bmw-blue-electric); /* Precio en Azul Eléctrico */
+        line-height: 1;
+    }
+
+    .bmw-elite-card__price-sub {
+        font-size: 12px;
+        color: var(--bmw-grey-text);
+        margin-left: 5px;
+    }
+
+    /* BOTONES DE ACCIÓN ELITE */
+    .bmw-elite-card__actions {
+        display: flex;
+        gap: 15px;
+    }
+
+    .bmw-elite-card__btn {
+        flex: 1;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+
+    /* Botón Principal (Azul Sólido) */
+    .bmw-elite-card__btn--primary {
+        background-color: var(--bmw-blue-electric);
+        color: var(--bmw-white);
+        border: 1px solid transparent;
+    }
+
+    .bmw-elite-card__btn--primary:hover {
+        background-color: var(--bmw-blue-dark);
+    }
+
+    /* Botón Secundario (Outline Negro) */
+    .bmw-elite-card__btn--secondary {
+        background-color: transparent;
+        color: var(--bmw-black);
+        border: 1px solid var(--bmw-black);
+    }
+
+    .bmw-elite-card__btn--secondary:hover {
+        background-color: var(--bmw-black);
+        color: var(--bmw-white);
+    }
+
+    /* RESPONSIVO AJUSTES PEQUEÑOS */
+    @media (max-width: 480px) {
+        .bmw-elite-card__content {
+            padding: 20px;
+        }
+        .bmw-elite-card__title {
+            font-size: 22px;
+        }
+        .bmw-elite-card__price-main {
+            font-size: 24px;
+        }
+        .bmw-elite-card__actions {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="BMW Specs Configuration"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <!-- PESTAÑA 1: CONFIGURACIÓN GENERAL -->
+                    <header jcr:primaryType="nt:unstructured" jcr:title="Cabecera y Estilo"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <style jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Paleta de Colores / Estilo"
+                                name="./style">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default jcr:primaryType="nt:unstructured" 
+                                        text="BMW Light (Corporativo)" 
+                                        value="default"/>
+                                    <black jcr:primaryType="nt:unstructured" 
+                                        text="Dark Night (Negro y Dorado)" 
+                                        value="black"/>
+                                    <mperf jcr:primaryType="nt:unstructured" 
+                                        text="M Performance (Gradiente M)" 
+                                        value="m-performance"/>
+                                </items>
+                            </style>
+                            <tag jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Tag Superior" name="./tag" emptyText="Ej: Especificaciones"/>
+                            <title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Título Principal" name="./title" />
+                            <intro jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Descripción" name="./intro" />
+                            <labels jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                jcr:title="Nombres de las Pestañas">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <t1 jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldLabel="Tab 1" name="./tab1Label"/>
+                                    <t2 jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldLabel="Tab 2" name="./tab2Label"/>
+                                    <t3 jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/textfield" fieldLabel="Tab 3" name="./tab3Label"/>
+                                </items>
+                            </labels>
+                        </items>
+                    </header>
+
+                    <!-- PESTAÑA 2: DATOS TÉCNICOS -->
+                    <specs jcr:primaryType="nt:unstructured" jcr:title="Datos Técnicos"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <p1 jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/fieldset" jcr:title="Vehículo 1 (P1)">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <acel jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Acel. 0-100" name="./p1Acel" step="0.1"/>
+                                    <pot jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Potencia CV" name="./p1Pot"/>
+                                    <bar jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Barra % (0-100)" name="./p1Bar1"/>
+                                </items>
+                            </p1>
+                            <p2 jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/fieldset" jcr:title="Vehículo 2 (P2)">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <acel jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Acel. 0-100" name="./p2Acel" step="0.1"/>
+                                    <pot jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Potencia CV" name="./p2Pot"/>
+                                    <bar jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Barra % (0-100)" name="./p2Bar1"/>
+                                </items>
+                            </p2>
+                            <p3 jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/fieldset" jcr:title="Vehículo 3 (P3)">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <acel jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Acel. 0-100" name="./p3Acel" step="0.1"/>
+                                    <pot jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Potencia CV" name="./p3Pot"/>
+                                    <bar jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" fieldLabel="Barra % (0-100)" name="./p3Bar1"/>
+                                </items>
+                            </p3>
+                        </items>
+                    </specs>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

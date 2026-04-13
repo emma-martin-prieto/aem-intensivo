@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Audi Hero"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- ===== CONTENIDO TEXTUAL ===== -->
+            <eyebrow
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Eyebrow"
+                fieldDescription="Texto pequeño encima del título. Ej: AUDI VORSPRUNG DURCH TECHNIK"
+                name="./eyebrow"
+                emptyText="AUDI VORSPRUNG DURCH TECHNIK"/>
+
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título principal"
+                name="./title"
+                emptyText="El futuro tiene cuatro anillos."/>
+
+            <subtitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Subtítulo"
+                name="./subtitle"
+                emptyText="Descubre una gama Audi diseñada para quienes exigen más en cada curva."/>
+
+            <!-- ===== MEDIA DE FONDO ===== -->
+            <backgroundVideo
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Vídeo de fondo (MP4 recomendado)"
+                fieldDescription="Si se configura, el vídeo tiene prioridad sobre la imagen"
+                name="./backgroundVideo"
+                rootPath="/content/dam"
+                nodeTypes="[dam:Asset]"
+                fileReferenceParameter="./backgroundVideo"/>
+
+            <backgroundImage
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Imagen de fondo (fallback)"
+                name="./backgroundImage"
+                rootPath="/content/dam"
+                nodeTypes="[dam:Asset]"/>
+
+            <posterImage
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Poster del vídeo (imagen mientras carga)"
+                name="./posterImage"
+                rootPath="/content/dam"
+                nodeTypes="[dam:Asset]"/>
+
+            <!-- ===== IMAGEN DEL COCHE ===== -->
+            <carImage
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Imagen del coche (PNG con fondo transparente recomendado)"
+                name="./carImage"
+                rootPath="/content/dam"
+                nodeTypes="[dam:Asset]"/>
+
+            <carImageAlt
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Alt texto imagen coche"
+                name="./carImageAlt"
+                emptyText="Audi"/>
+
+            <!-- ===== CTAs ===== -->
+            <primaryCtaText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Texto CTA Principal"
+                name="./primaryCtaText"
+                emptyText="Ver modelos"/>
+
+            <primaryCtaLink
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="URL CTA Principal"
+                name="./primaryCtaLink"
+                emptyText="#"/>
+
+            <secondaryCtaText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Texto CTA Secundario"
+                name="./secondaryCtaText"
+                emptyText="Solicitar prueba de conducción"/>
+
+            <secondaryCtaLink
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="URL CTA Secundario"
+                name="./secondaryCtaLink"
+                emptyText="#"/>
+
+            <!-- ===== OPCIONES AVANZADAS ===== -->
+            <autoplay
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                fieldLabel="Autoplay del vídeo"
+                name="./autoplay"
+                checked="{Boolean}true"
+                text="Activar autoplay (recomendado desactivar en mobile si el vídeo es pesado)"/>
+
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,254 @@
+/* ==========================================================================
+   BMW SPECS COMPONENT - FULL STYLES
+   ========================================================================== */
+
+:root {
+    --bmw-blue: #0066b1;
+    --bmw-blue-hover: #004a82;
+    --bmw-black: #1c1c1c;
+    --bmw-grey-light: #f6f6f6;
+    --bmw-grey-dark: #666666;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bmw-specs {
+    padding: 100px 0;
+    background-color: #080808;
+    font-family: 'BMWTypeNext', 'Helvetica Neue', Arial, sans-serif;
+    overflow: hidden;
+}
+
+.bmw-specs__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Header & Intro --- */
+.bmw-specs__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.bmw-specs__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--bmw-blue);
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+.bmw-specs__title {
+    font-size: 48px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.bmw-specs__intro {
+    font-size: 18px;
+    color: #9ea3a8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Tabs System --- */
+.bmw-specs__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+    border-bottom-color: rgba(255,255,255,0.08);
+    padding-bottom: 20px;
+}
+
+.bmw-specs__tab {
+    padding: 12px 30px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.bmw-specs__tab:after {
+    content: '';
+    position: absolute;
+    bottom: -21px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--bmw-blue);
+    transition: var(--transition);
+}
+
+.bmw-specs__tab--active {
+    color: #ffffff;
+}
+
+.bmw-specs__tab--active:after {
+    width: 100%;
+}
+
+/* --- Panel Logic --- */
+.bmw-specs__panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.bmw-specs__panel--active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Grid de Especificaciones (Cards) --- */
+.bmw-specs__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.bmw-specs__card {
+    background: #141414;
+    padding: 40px 30px;
+    border-radius: 4px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.bmw-specs__card:hover {
+    background: #1c1c1c;
+    border-color: var(--bmw-blue);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateY(-10px);
+}
+
+.bmw-specs__card-icon {
+    color: var(--bmw-blue);
+    margin-bottom: 20px;
+}
+
+.bmw-specs__value {
+    display: block;
+    font-size: 56px;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.bmw-specs__unit {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--bmw-blue);
+    margin-left: 4px;
+}
+
+.bmw-specs__label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9ea3a8;
+}
+
+/* --- Barras de Comparativa --- */
+.bmw-specs__bars {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bmw-specs__bar-row {
+    margin-bottom: 25px;
+}
+
+.bmw-specs__bar-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+.bmw-specs__bar-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bmw-specs__bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--bmw-blue);
+    width: 0; /* Controlado por JS */
+    transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.bmw-specs__bar-pct {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 8px;
+    color: var(--bmw-blue);
+}
+
+/* ==========================================================================
+   VARIANTES DINÁMICAS (Para integrar con el Selector del Header)
+   ========================================================================== */
+
+/* Black & Gold Style */
+.bmw-specs.style-black {
+    background-color: #111;
+}
+.style-black .bmw-specs__title, 
+.style-black .bmw-specs__value,
+.style-black .bmw-specs__tab--active { color: #ffd700; }
+.style-black .bmw-specs__card { background: #1a1a1a; color: white; }
+.style-black .bmw-specs__bar-fill { background: #ffd700; }
+
+/* M Performance Style */
+.style-m-performance .bmw-specs__tab--active:after {
+    background: linear-gradient(90deg, #0066b1 0%, #009ada 50%, #ff2d2d 100%);
+}
+.style-m-performance .bmw-specs__bar-fill {
+    background: linear-gradient(90deg, #0066b1, #ff2d2d);
+}
+
+/* Necesario para que el JS de Scroll Reveal funcione */
+.js-bmw-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.js-bmw-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .bmw-specs__title { font-size: 32px; }
+    .bmw-specs__tabs { flex-direction: column; align-items: center; border: none; }
+    .bmw-specs__tab:after { display: none; }
+    .bmw-specs__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,200 @@
+/* ============================================================
+   CARDLIST AUDI — Versión corregida y funcional
+   ============================================================ */
+
+:root {
+    --audi-red:        #BB0A21;
+    --audi-red-dark:   #8C0718;
+    --audi-black:      #0D0D0D;
+    --audi-dark:       #1C1C1C;
+    --audi-border:     #2E2E2E;
+    --audi-grey:       #6B6B6B;
+    --audi-grey-light: #C8C8C8;
+    --audi-white:      #FFFFFF;
+    --transition:      0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Contenedor principal */
+.audi-grid {
+    background-color: var(--audi-black);
+    padding: 80px 20px;
+}
+
+.audi-grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2px;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+/* Tarjeta Audi */
+.audi-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--audi-dark);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.audi-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
+}
+
+/* Franja roja lateral (detalle Audi) */
+.audi-card__accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--audi-red);
+    z-index: 3;
+}
+
+/* Imagen */
+.audi-card__image-container {
+    position: relative;
+    height: 240px;
+    background: #111;
+    overflow: hidden;
+}
+
+.audi-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 24px;
+    transition: transform 0.5s ease;
+}
+
+.audi-card:hover .audi-card__image {
+    transform: scale(1.06);
+}
+
+/* Badge quattro */
+.audi-card__quattro-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: var(--audi-red);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 2px;
+    z-index: 4;
+    letter-spacing: 0.5px;
+}
+
+/* Contenido */
+.audi-card__content {
+    flex-grow: 1;
+    padding: 24px 28px 28px;
+}
+
+.audi-card__tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--audi-red);
+    margin-bottom: 8px;
+}
+
+.audi-card__title {
+    font-size: 1.65rem;
+    font-weight: 300;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Datos técnicos */
+.audi-card__tech-data {
+    display: flex;
+    border-top: 1px solid var(--audi-border);
+    border-bottom: 1px solid var(--audi-border);
+    margin-bottom: 24px;
+    padding: 14px 0;
+}
+
+.audi-card__data-item {
+    flex: 1;
+    text-align: center;
+}
+
+.audi-card__data-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: white;
+}
+
+.audi-card__data-label {
+    font-size: 0.7rem;
+    color: var(--audi-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* Precio */
+.audi-card__price-section {
+    margin-bottom: 24px;
+}
+
+.audi-card__price-main {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* Botones */
+.audi-card__actions {
+    display: flex;
+    gap: 12px;
+}
+
+.audi-card__btn {
+    flex: 1;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.audi-card__btn--primary {
+    background-color: var(--audi-red);
+    color: white;
+}
+
+.audi-card__btn--primary:hover {
+    background-color: var(--audi-red-dark);
+}
+
+.audi-card__btn--secondary {
+    background: transparent;
+    color: var(--audi-grey-light);
+    border: 1px solid var(--audi-border);
+}
+
+.audi-card__btn--secondary:hover {
+    border-color: var(--audi-grey-light);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .audi-grid__wrapper {
+        grid-template-columns: 1fr;
+    }
+}

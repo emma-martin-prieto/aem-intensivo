@@ -1,0 +1,82 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<section class="audi-hero">
+
+    <!-- Vídeo de fondo (solo en publish) -->
+    <sly data-sly-test="${!wcmmode.edit && properties.backgroundVideo}">
+        <video id="audiHeroVideo"
+               class="audi-hero__video"
+               autoplay
+               muted
+               loop
+               playsinline
+               preload="auto"
+               poster="${properties.posterImage @ context='uri'}">
+            <source src="${properties.backgroundVideo @ context='uri'}" type="video/mp4">
+        </video>
+    </sly>
+
+    <!-- Imagen de fondo (fallback) -->
+    <sly data-sly-test="${properties.backgroundImage}">
+        <div class="audi-hero__bg-image"
+             style="background-image: url('${properties.backgroundImage @ context='uri'}');"></div>
+    </sly>
+
+    <!-- Overlay con gradiente Audi -->
+    <div class="audi-hero__overlay"></div>
+
+    <!-- Banda roja superior (detalle de marca) -->
+    <div class="audi-hero__red-bar"></div>
+
+    <div class="audi-hero__container">
+
+        <!-- Contenido textual -->
+        <div class="audi-hero__content">
+
+            <!-- Cuatro anillos SVG inline -->
+            <div class="audi-hero__rings" aria-label="Audi">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 45" fill="none" class="audi-hero__rings-svg" aria-hidden="true">
+                    <circle cx="22.5" cy="22.5" r="20" stroke="white" stroke-width="2.5"/>
+                    <circle cx="55.5" cy="22.5" r="20" stroke="white" stroke-width="2.5"/>
+                    <circle cx="88.5" cy="22.5" r="20" stroke="white" stroke-width="2.5"/>
+                    <circle cx="121.5" cy="22.5" r="20" stroke="white" stroke-width="2.5"/>
+                </svg>
+            </div>
+
+            <span class="audi-hero__eyebrow">${properties.eyebrow || 'AUDI VORSPRUNG DURCH TECHNIK'}</span>
+            <h1 class="audi-hero__title">${properties.title || 'El futuro tiene cuatro anillos.'}</h1>
+            <p class="audi-hero__subtitle">${properties.subtitle || 'Descubre una gama Audi diseñada para quienes exigen más en cada curva.'}</p>
+
+            <div class="audi-hero__actions">
+                <sly data-sly-test="${properties.primaryCtaLink}">
+                    <button onclick="window.location.href='${properties.primaryCtaLink @ context='uri'}'"
+                            class="audi-hero__btn audi-hero__btn--primary">
+                        ${properties.primaryCtaText || 'Ver modelos'}
+                    </button>
+                </sly>
+                <sly data-sly-test="${properties.secondaryCtaLink}">
+                    <button onclick="window.location.href='${properties.secondaryCtaLink @ context='uri'}'"
+                            class="audi-hero__btn audi-hero__btn--secondary">
+                        ${properties.secondaryCtaText || 'Solicitar prueba'}
+                    </button>
+                </sly>
+            </div>
+        </div>
+
+        <!-- Imagen del coche -->
+        <sly data-sly-test="${properties.carImage}">
+            <div class="audi-hero__media">
+                <img src="${properties.carImage @ context='uri'}"
+                     alt="${properties.carImageAlt || 'Audi'}"
+                     class="audi-hero__car"/>
+            </div>
+        </sly>
+
+    </div>
+</section>
+
+<!-- Placeholder en modo edición cuando no hay contenido -->
+<sly data-sly-test="${wcmmode.edit && !properties.title && !properties.backgroundImage && !properties.backgroundVideo}">
+    <div class="cq-placeholder" data-emptytext="Audi Hero — Configura título o imagen/vídeo de fondo"></div>
+</sly>

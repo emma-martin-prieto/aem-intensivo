@@ -1,0 +1,228 @@
+/* ==========================================================================
+   BMW HERO - Versión con VIDEO DE FONDO (corregida para AEM)
+   ========================================================================== */
+
+:root {
+  --bmw-blue:       #1c69d4;
+  --bmw-blue-light: #3a88f0;
+  --bmw-black:      #0a0a0a;
+  --bmw-muted:      #9ea3a8;
+  --bmw-white:      #ffffff;
+  --bmw-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* HERO PRINCIPAL */
+.bmw-hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 88px);        /* Igual que tu compañero */
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  z-index: 1;
+}
+
+/* Video de fondo - Principal */
+.bmw-hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Imagen de fondo como fallback (muy importante en edición) */
+.bmw-hero__bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 30%;
+  z-index: 1;
+}
+
+/* Overlay estilo BMW (izquierda) */
+.bmw-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 635px;
+  height: 100%;
+  background: linear-gradient(90deg,
+      rgba(10,10,10,0.88) 0%,
+      rgba(10,10,10,0.75) 35%,
+      rgba(10,10,10,0.15) 70%,
+      transparent 100%);
+  z-index: 2;
+}
+
+/* ==================== MODO EDICIÓN Y PREVIEW ==================== */
+.aem-AuthorLayer-Edit .bmw-hero,
+.aem-AuthorLayer-Preview .bmw-hero,
+.cq-edit-mode .bmw-hero,
+.cq-Overlay .bmw-hero {
+  height: 768px !important;     /* Altura fija en AEM para que no se rompa el scroll */
+}
+
+/* Contenedor */
+.bmw-hero__container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Contenido textual */
+.bmw-hero__content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.bmw-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  color: var(--bmw-blue-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.bmw-hero__eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: var(--bmw-blue);
+}
+
+.bmw-hero__title {
+  color: var(--bmw-white);
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  margin-bottom: 24px;
+}
+
+.bmw-hero__subtitle {
+  color: var(--bmw-muted);
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+/* Botones */
+.bmw-hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bmw-hero__btn {
+  padding: 16px 34px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-width: 180px;
+  border: none;
+  transition: var(--bmw-transition);
+}
+
+.bmw-hero__btn--primary {
+  background: var(--bmw-blue);
+  color: var(--bmw-white);
+}
+
+.bmw-hero__btn--primary:hover {
+  background: var(--bmw-blue-light);
+  transform: translateY(-3px);
+}
+
+.bmw-hero__btn--secondary {
+  background: transparent;
+  color: var(--bmw-white);
+  border: 2px solid rgba(255,255,255,0.35);
+}
+
+.bmw-hero__btn--secondary:hover {
+  border-color: var(--bmw-white);
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-3px);
+}
+
+/* Imagen del coche */
+.bmw-hero__media {
+  flex-shrink: 0;
+}
+
+.bmw-hero__car {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.65));
+}
+
+.bmw-hero__media:hover .bmw-hero__car {
+  transform: scale(1.03) translateY(-10px);
+}
+
+/* Placeholder en edición */
+.cq-placeholder {
+  padding: 80px 40px;
+  background: #1a1d24;
+  border: 2px dashed #666;
+  color: #ccc;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1366px) {
+  .bmw-hero__container { padding: 0 60px; }
+}
+
+@media (max-width: 1024px) {
+  .bmw-hero {
+    height: auto;
+    min-height: 650px;
+  }
+  .bmw-hero__container {
+    padding: 0 40px;
+    gap: 30px;
+  }
+  .bmw-hero__content { max-width: 50%; }
+}
+
+@media (max-width: 768px) {
+  .bmw-hero {
+    height: auto;
+    min-height: 600px;
+  }
+  .bmw-hero__overlay {
+    width: 100%;
+    background: rgba(10,10,10,0.70);
+  }
+  .bmw-hero__container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .bmw-hero__actions { justify-content: center; }
+  .bmw-hero__media { order: 2; }
+}

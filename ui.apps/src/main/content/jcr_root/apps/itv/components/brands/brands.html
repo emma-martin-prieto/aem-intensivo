@@ -5,34 +5,31 @@
     <div class="brands__container">
 
         <div class="brands__header">
-            <span class="brands__tag">${properties.tag || 'Marcas con las que trabajamos'}</span>
-            <h2 class="brands__title">${properties.title || 'Una selección pensada para ofrecerte más opciones'}</h2>
-            <p class="brands__intro">
-                ${properties.intro || 'En BuyCar reunimos diferentes marcas para que puedas descubrir, comparar y elegir el vehículo que mejor encaja contigo.'}
-            </p>
+            <span class="brands__tag">${properties.tag || 'BMW Group Universe'}</span>
+            <h2 class="brands__title">${properties.title || 'Más que una marca'}</h2>
+            <p class="brands__intro">${properties.intro || 'Explora nuestras divisiones.'}</p>
         </div>
 
         <div class="brands__grid">
-            <sly data-sly-use.brandNodes="${resource.path}/brands">
-                <sly data-sly-list.item="${brandNodes.listChildren}">
-                    <div class="brands__item" data-sly-test="${item.imagePath}">
-                        <a href="${item.linkUrl}"
-                           class="brands__link"
-                           data-sly-test="${item.linkUrl}">
-                            <img src="${item.imagePath}" alt="Logo de la Marca" class="brands__img"/>
-                        </a>
-
-                        <img data-sly-test="${!item.linkUrl}"
-                             src="${item.imagePath}"
-                             alt="Logo de la Marca"
-                             class="brands__img"/>
-                    </div>
+            <sly data-sly-list.item="${resource.children}">
+                <sly data-sly-test="${item.name == 'brands'}">
+                    <sly data-sly-list.brand="${item.children}">
+                        <div class="brands__item" data-sly-test="${brand.imagePath}">
+                            <a href="${brand.linkUrl}" 
+                               class="brands__link" 
+                               data-sly-unwrap="${!brand.linkUrl}">
+                                <img src="${brand.imagePath}" alt="Logo BMW" class="brands__img"/>
+                            </a>
+                        </div>
+                    </sly>
                 </sly>
             </sly>
         </div>
     </div>
 </section>
 
-<sly data-sly-test="${wcmmode.edit && !brandNodes}">
-    <div class="cq-placeholder" data-emptytext="Mosaico de Marcas: Configura logos en el diálogo"></div>
+<sly data-sly-test="${wcmmode.edit && !properties.title}">
+    <div style="padding: 20px; border: 1px dashed #1C69D4; text-align: center; color: #1C69D4;">
+        Configurar Componente Marcas BMW
+    </div>
 </sly>

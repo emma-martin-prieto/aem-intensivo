@@ -1,0 +1,80 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<section class="audi-grid">
+    <div class="audi-grid__wrapper" data-sly-list.item="${resource.getChildren}">
+
+        <div data-sly-test="${item.name == 'cards'}" data-sly-unwrap>
+            <div data-sly-list.card="${item.getChildren}" data-sly-unwrap>
+
+                <article class="audi-card">
+
+                    <!-- Franja roja lateral izquierda — detalle de marca -->
+                    <div class="audi-card__accent-bar"></div>
+
+                    <!-- Imagen del modelo -->
+                    <div class="audi-card__image-container">
+                        <img src="${card.imagePath || '/content/dam/itv/Coche.png'}"
+                             alt="${card.modelTitle}"
+                             class="audi-card__image"/>
+                        <div class="audi-card__image-overlay"></div>
+
+                        <!-- Badge quattro (opcional) -->
+                        <sly data-sly-test="${card.quattro}">
+                            <span class="audi-card__quattro-badge">quattro<sup>®</sup></span>
+                        </sly>
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="audi-card__content">
+
+                        <!-- Tag de línea (ej: S line, RS, e-tron) -->
+                        <span class="audi-card__tag" data-sly-test="${card.tag}">${card.tag}</span>
+
+                        <h3 class="audi-card__title">${card.modelTitle || 'Nuevo Modelo Audi'}</h3>
+
+                        <!-- Datos técnicos -->
+                        <div class="audi-card__tech-data">
+                            <div class="audi-card__data-item" data-sly-test="${card.powerText}">
+                                <span class="audi-card__data-value">${card.powerText}</span>
+                                <span class="audi-card__data-label">Potencia</span>
+                            </div>
+                            <div class="audi-card__data-item" data-sly-test="${card.rangeText}">
+                                <span class="audi-card__data-value">${card.rangeText}</span>
+                                <span class="audi-card__data-label">Autonomía</span>
+                            </div>
+                            <div class="audi-card__data-item" data-sly-test="${card.accelText}">
+                                <span class="audi-card__data-value">${card.accelText}</span>
+                                <span class="audi-card__data-label">0–100 km/h</span>
+                            </div>
+                        </div>
+
+                        <!-- Precio -->
+                        <div class="audi-card__price-section" data-sly-test="${card.priceMain}">
+                            <span class="audi-card__price-from">Desde</span>
+                            <span class="audi-card__price-main">${card.priceMain}</span>
+                        </div>
+
+                        <!-- CTAs -->
+                        <div class="audi-card__actions">
+                            <a href="${card.btn1Link || '#'}" class="audi-card__btn audi-card__btn--primary">
+                                ${card.btn1Text || 'Configurar'}
+                            </a>
+                            <a href="${card.btn2Link || '#'}" class="audi-card__btn audi-card__btn--secondary">
+                                ${card.btn2Text || 'Más info'}
+                            </a>
+                        </div>
+
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Placeholder en modo edición sin tarjetas -->
+<div data-sly-test="${!resource.getChildren}" class="audi-grid__placeholder">
+    Haga clic para añadir tarjetas Audi mediante el Multifield.
+</div>

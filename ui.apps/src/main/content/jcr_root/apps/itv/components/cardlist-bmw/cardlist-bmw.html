@@ -1,0 +1,51 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<section class="bmw-elite-group">
+    <div class="bmw-elite-group__wrapper" data-sly-list.item="${resource.getChildren}">
+        
+        <div data-sly-test="${item.name == 'cards'}" data-sly-unwrap>
+            <div data-sly-list.card="${item.getChildren}" data-sly-unwrap>
+                
+                <article class="bmw-elite-card">
+                    <div class="bmw-elite-card__image-container">
+                        <img src="${card.imagePath || '/content/dam/itv/Coche.png'}" alt="${card.modelTitle}" class="bmw-elite-card__image">
+                        <div class="bmw-elite-card__image-overlay"></div>
+                    </div>
+
+                    <div class="bmw-elite-card__content">
+                        <span class="bmw-elite-card__tag" data-sly-test="${card.tag}">${card.tag}</span>
+                        <h3 class="bmw-elite-card__title">${card.modelTitle || 'Nuevo Modelo BMW'}</h3>
+                        
+                        <div class="bmw-elite-card__tech-data">
+                            <div class="bmw-elite-card__data-item" data-sly-test="${card.powerText}">
+                                <span class="bmw-elite-card__data-value">${card.powerText}</span>
+                                <span class="bmw-elite-card__data-label">Potencia</span>
+                            </div>
+                            <div class="bmw-elite-card__data-item" data-sly-test="${card.rangeText}">
+                                <span class="bmw-elite-card__data-value">${card.rangeText}</span>
+                                <span class="bmw-elite-card__data-label">Autonomía</span>
+                            </div>
+                        </div>
+
+                        <div class="bmw-elite-card__price-section" data-sly-test="${card.priceMain}">
+                            <span class="bmw-elite-card__price-main">${card.priceMain}</span>
+                        </div>
+
+                        <div class="bmw-elite-card__actions">
+                            <a href="#" class="bmw-elite-card__btn bmw-elite-card__btn--primary">
+                                ${card.btn1Text || 'Configurar'}
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div data-sly-test="${!resource.getChildren}" style="padding: 40px; border: 1px dashed #ccc; text-align: center;">
+    Haga clic para añadir tarjetas BMW mediante el Multifield.
+</div>

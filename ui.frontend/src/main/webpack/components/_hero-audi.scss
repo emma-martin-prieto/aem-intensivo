@@ -1,0 +1,310 @@
+:root {
+    --audi-red:        #BB0A21;
+    --audi-red-dark:   #8C0718;
+    --audi-black:      #0D0D0D;
+    --audi-dark:       #1A1A1A;
+    --audi-grey:       #6B6B6B;
+    --audi-grey-light: #C8C8C8;
+    --audi-white:      #FFFFFF;
+    --audi-transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================================
+   Sección raíz
+   ============================================================ */
+.audi-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 88px);
+    min-height: 620px;
+    overflow: hidden;
+    background-color: var(--audi-black);
+    z-index: 1;
+}
+
+/* Altura fija en modo edición AEM */
+.aem-AuthorLayer-Edit .audi-hero,
+.aem-AuthorLayer-Preview .audi-hero,
+.cq-Overlay .audi-hero,
+.cq-edit-mode .audi-hero {
+    height: 768px !important;
+}
+
+/* ============================================================
+   Vídeo / imagen de fondo
+   ============================================================ */
+.audi-hero__video,
+.audi-hero__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.audi-hero__video {
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.audi-hero__bg-image {
+    background-size: cover;
+    background-position: center 35%;
+}
+
+/* ============================================================
+   Overlay: gradiente negro hacia la derecha (estilo Audi)
+   ============================================================ */
+.audi-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 10, 10, 0.92) 0%,
+        rgba(10, 10, 10, 0.78) 38%,
+        rgba(10, 10, 10, 0.18) 72%,
+        transparent 100%
+    );
+    z-index: 2;
+}
+
+/* ============================================================
+   Banda roja superior — detalle de identidad Audi
+   ============================================================ */
+.audi-hero__red-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--audi-red);
+    z-index: 10;
+}
+
+/* ============================================================
+   Contenedor principal
+   ============================================================ */
+.audi-hero__container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+/* ============================================================
+   Bloque de contenido textual
+   ============================================================ */
+.audi-hero__content {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Cuatro anillos */
+.audi-hero__rings {
+    margin-bottom: 28px;
+}
+
+.audi-hero__rings-svg {
+    width: 110px;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* Eyebrow */
+.audi-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--audi-grey-light);
+    margin-bottom: 18px;
+}
+
+.audi-hero__eyebrow::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 2px;
+    background-color: var(--audi-red);
+    flex-shrink: 0;
+}
+
+/* Título */
+.audi-hero__title {
+    font-size: clamp(2.8rem, 6vw, 5.4rem);
+    font-weight: 700;
+    color: var(--audi-white);
+    line-height: 1.06;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+/* Subtítulo */
+.audi-hero__subtitle {
+    font-size: clamp(0.95rem, 1.35vw, 1.1rem);
+    color: var(--audi-grey-light);
+    line-height: 1.78;
+    margin-bottom: 44px;
+    max-width: 480px;
+    opacity: 0.85;
+}
+
+/* ============================================================
+   CTAs
+   ============================================================ */
+.audi-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.audi-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 50px;
+    padding: 0 32px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: var(--audi-transition);
+}
+
+/* CTA primario: rojo Audi sólido */
+.audi-hero__btn--primary {
+    background-color: var(--audi-red);
+    color: var(--audi-white);
+}
+
+.audi-hero__btn--primary:hover {
+    background-color: var(--audi-red-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(187, 10, 33, 0.35);
+}
+
+/* CTA secundario: borde blanco semi-transparente */
+.audi-hero__btn--secondary {
+    background-color: transparent;
+    color: var(--audi-white);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.audi-hero__btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--audi-white);
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   Media (imagen del coche)
+   ============================================================ */
+.audi-hero__media {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.audi-hero__car {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
+    transition: transform var(--audi-transition);
+}
+
+.audi-hero__media:hover .audi-hero__car {
+    transform: scale(1.03) translateY(-8px);
+}
+
+/* ============================================================
+   Placeholder en modo edición
+   ============================================================ */
+.cq-placeholder {
+    background: #1a1a1a;
+    border: 2px dashed #555;
+    color: #aaa;
+    font-size: 1.1rem;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1366px) {
+    .audi-hero__container {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .audi-hero {
+        height: auto;
+        min-height: 660px;
+    }
+
+    .audi-hero__container {
+        gap: 30px;
+        padding: 0 40px;
+    }
+
+    .audi-hero__content {
+        max-width: 52%;
+    }
+}
+
+@media (max-width: 768px) {
+    .audi-hero {
+        min-height: 600px;
+    }
+
+    .audi-hero__overlay {
+        background: rgba(10, 10, 10, 0.72);
+        width: 100%;
+    }
+
+    .audi-hero__container {
+        flex-direction: column;
+        padding: 60px 24px 40px;
+        text-align: center;
+    }
+
+    .audi-hero__content {
+        max-width: 100%;
+    }
+
+    .audi-hero__eyebrow {
+        justify-content: center;
+    }
+
+    .audi-hero__subtitle {
+        margin: 0 auto 36px;
+    }
+
+    .audi-hero__actions {
+        justify-content: center;
+    }
+
+    .audi-hero__media {
+        order: -1;
+    }
+
+    .audi-hero__rings {
+        display: flex;
+        justify-content: center;
+    }
+}

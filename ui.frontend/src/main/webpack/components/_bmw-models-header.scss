@@ -1,0 +1,176 @@
+/* ==========================================================================
+   BMW + AUDI MODELS SECTION HEADER
+   Versión unificada y optimizada
+   ========================================================================== */
+
+/* Variables Globales */
+:root {
+  --bmw-white: #ffffff;
+  --bmw-dark: #060606;
+  --bmw-muted: #9ea3a8;
+  --gold-gradient: linear-gradient(135deg, #c5a059 0%, #ffd700 50%, #c5a059 100%);
+  --m-gradient: linear-gradient(90deg, #0066b1 0%, #009ada 30%, #212d5c 50%, #ff0000 100%);
+  --audi-red: #bb0a21;
+  --transition-speed: 0.8s;
+}
+
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+.bmw-models-section {
+  background-color: var(--bg-color, var(--bmw-dark));
+  padding: 100px 0 70px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fondo con iluminación dinámica */
+.bmw-models-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 60% at 50% 15%, rgba(28,105,212,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(255,165,0,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bmw-models-section__header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==================== TAG ==================== */
+.bmw-models-section__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.05);
+  border-left: 3px solid var(--accent-color, #1c69d4);
+  color: var(--tag-text, #a3bffa);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 10px 28px;
+  margin-bottom: 45px;
+  backdrop-filter: blur(15px);
+  transition: all 0.4s ease;
+}
+
+.bmw-models-section__tag svg {
+  filter: drop-shadow(0 0 5px var(--accent-color));
+}
+
+/* ==================== TÍTULO ==================== */
+.bmw-models-section__title {
+  color: var(--bmw-white);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 0 0 35px 0;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #ffffff 50%, #999999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
+}
+
+/* ==================== INTRO ==================== */
+.bmw-models-section__intro {
+  color: #b0b8c9;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ==================== VARIANTES DE ESTILO ==================== */
+
+/* 1. BMW Default (Azul) */
+.bmw-models-section.style-default {
+  --bg-color: #060606;
+  --accent-color: #1c69d4;
+  --tag-text: #a3bffa;
+}
+
+/* 2. Audi (Rojo) */
+.bmw-models-section.style-audi {
+    --bg-color:      #0D0D0D;
+    --accent-color:  #BB0A21;
+    --tag-text:      #F0B8BF;
+}
+
+.bmw-models-section.style-audi .bmw-models-section__title {
+  background: linear-gradient(to bottom, #ffffff 50%, #dddddd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3. Dark Premium (opcional) */
+.bmw-models-section.style-dark {
+  --bg-color: #0f0f0f;
+  --accent-color: #ffffff;
+  --tag-text: #ffffff;
+}
+
+.style-dark .bmw-models-section__title {
+  background: linear-gradient(to bottom, #ffffff 60%, #444444 100%);
+  -webkit-background-clip: text;
+}
+
+/* 4. Black & Gold (opcional) */
+.bmw-models-section.style-black {
+  --bg-color: #000000;
+  --accent-color: #ffd700;
+  --tag-text: #ffd700;
+}
+
+.style-black .bmw-models-section__title {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .bmw-models-section {
+    padding: 90px 0 60px;
+  }
+  
+  .bmw-models-section__title {
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  
+  .bmw-models-section__tag {
+    padding: 8px 20px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Animación de brillo ambiental (opcional pero elegante) */
+.bmw-models-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.03) 50%, transparent 52%);
+  pointer-events: none;
+  transform: rotate(25deg);
+  animation: ambientShine 12s linear infinite;
+}
+
+@keyframes ambientShine {
+  0%   { transform: translateY(-10%) rotate(25deg); }
+  100% { transform: translateY(10%) rotate(25deg); }
+}

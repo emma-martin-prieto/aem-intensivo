@@ -1,0 +1,85 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.bmw'}"/>
+
+<!-- Definimos el estilo dinámico igual que en el Header -->
+<sly data-sly-set.styleVal="${properties.style || 'default'}"></sly>
+<sly data-sly-set.compClass="${'style-{0}' @ format=[styleVal]}"></sly>
+
+<section class="bmw-specs ${compClass}" id="specs">
+    <div class="bmw-specs__container">
+
+        <div class="bmw-specs__header js-bmw-reveal" data-delay="0">
+            <span class="bmw-specs__tag">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.858 2.929 2.929 0 0 1 0 5.858"/>
+                </svg>
+                ${properties.tag || 'Especificaciones técnicas'}
+            </span>
+            <h2 class="bmw-specs__title">${properties.title || 'Ingeniería al límite'}</h2>
+            <p class="bmw-specs__intro">${properties.intro || 'Cada cifra, cada detalle, diseñado para superar expectativas.'}</p>
+        </div>
+
+        <!-- Tabs de versiones -->
+        <div class="bmw-specs__tabs js-bmw-reveal" data-delay="150">
+            <button class="bmw-specs__tab bmw-specs__tab--active" data-tab="panel1">
+                ${properties.tab1Label || 'Serie 5 Berlina'}
+            </button>
+            <button class="bmw-specs__tab" data-tab="panel2">
+                ${properties.tab2Label || 'Serie 5 Touring'}
+            </button>
+            <button class="bmw-specs__tab" data-tab="panel3">
+                ${properties.tab3Label || 'M5 Competition'}
+            </button>
+        </div>
+
+        <!-- Renderizado de Paneles -->
+        <div class="bmw-specs__panels-container">
+            <sly data-sly-list.index="${[1,2,3]}">
+                <!-- Generamos las claves de las propiedades antes de usarlas -->
+                <sly data-sly-set.acelKey="${'p{0}Acel' @ format=[index]}"></sly>
+                <sly data-sly-set.potKey="${'p{0}Pot' @ format=[index]}"></sly>
+                <sly data-sly-set.barKey="${'p{0}Bar1' @ format=[index]}"></sly>
+
+                <div class="bmw-specs__panel ${itemList.first ? 'bmw-specs__panel--active' : ''}" data-panel="panel${index}">
+                    <div class="bmw-specs__grid">
+                        
+                        <!-- Card 1: Aceleración -->
+                        <div class="bmw-specs__card js-bmw-reveal">
+                            <div class="bmw-specs__card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M7.5 6.5a.5.5 0 0 0-1 0v3.793L5.354 9.146a.5.5 0 1 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L7.5 10.293z"/></svg>
+                            </div>
+                            <span class="bmw-specs__value js-counter" data-target="${properties[acelKey] || '5.0'}">0</span>
+                            <span class="bmw-specs__unit">s</span>
+                            <span class="bmw-specs__label">0-100 km/h</span>
+                        </div>
+
+                        <!-- Card 2: Potencia -->
+                        <div class="bmw-specs__card js-bmw-reveal">
+                            <div class="bmw-specs__card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0m10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/><path d="M6 1a1 1 0 0 0-.8.4L3.6 3.5H2a2 2 0 0 0-2 2V9a2 2 0 0 0 2 2h.17a3 3 0 0 0 5.66 0h.34a3 3 0 0 0 5.66 0H14a2 2 0 0 0 2-2V6.5a2 2 0 0 0-.59-1.41l-2.5-2.5A2 2 0 0 0 11.5 2H10.4l-.6-1.2A1 1 0 0 0 8.9.2h-2.9Zm.5 1h2.2l.5 1H6l.5-1Z"/></svg>
+                            </div>
+                            <span class="bmw-specs__value js-counter" data-target="${properties[potKey] || '300'}">0</span>
+                            <span class="bmw-specs__unit">CV</span>
+                            <span class="bmw-specs__label">Potencia</span>
+                        </div>
+                    </div>
+
+                    <!-- Barras de progreso -->
+                    <div class="bmw-specs__bars js-bmw-reveal">
+                        <div class="bmw-specs__bar-row">
+                            <span class="bmw-specs__bar-label">Rendimiento</span>
+                            <div class="bmw-specs__bar-track">
+                                <div class="bmw-specs__bar-fill js-bar" data-width="${properties[barKey] || '70'}"></div>
+                            </div>
+                            <span class="bmw-specs__bar-pct">${properties[barKey] || '70'}%</span>
+                        </div>
+                    </div>
+                </div>
+            </sly>
+        </div>
+    </div>
+</section>
+
+<sly data-sly-test="${wcmmode.edit && !properties.title}">
+    <div class="cq-placeholder" data-emptytext="BMW Specs: Configura las especificaciones"></div>
+</sly>
