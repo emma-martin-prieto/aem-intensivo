@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Audi Specs — Configuración"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <!-- ═══════════════════════════════════
+                         PESTAÑA 1 — Cabecera del componente
+                         ═══════════════════════════════════ -->
+                    <header jcr:primaryType="nt:unstructured"
+                        jcr:title="Cabecera"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <tag jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Tag superior"
+                                fieldDescription="Ej: Vorsprung durch Technik"
+                                name="./tag"
+                                emptyText="Vorsprung durch Technik"/>
+
+                            <title jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Título"
+                                name="./title"
+                                emptyText="Tecnología que se siente"/>
+
+                            <intro jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Texto introductorio"
+                                name="./intro"
+                                emptyText="Cada cifra refleja décadas de ingeniería alemana..."/>
+
+                            <tabLabels jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                jcr:title="Nombres de los tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <t1 jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Tab 1" name="./tab1Label"
+                                        emptyText="Audi A6 40 TDI"/>
+                                    <t2 jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Tab 2" name="./tab2Label"
+                                        emptyText="Audi Q5 55 TFSI e"/>
+                                    <t3 jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Tab 3" name="./tab3Label"
+                                        emptyText="Audi RS 6 Avant"/>
+                                </items>
+                            </tabLabels>
+
+                        </items>
+                    </header>
+
+                    <!-- ═══════════════════════════════════
+                         PESTAÑA 2 — Vehículo 1
+                         ═══════════════════════════════════ -->
+                    <vehicle1 jcr:primaryType="nt:unstructured"
+                        jcr:title="Vehículo 1 (Tab 1)"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <acel jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Aceleración 0–100 km/h (segundos)"
+                                fieldDescription="Ej: 7.3"
+                                name="./p1Acel" step="0.1"/>
+
+                            <pot jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Potencia (CV)"
+                                fieldDescription="Ej: 204"
+                                name="./p1Pot"/>
+
+                            <range jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Autonomía (km)"
+                                fieldDescription="Ej: 540 — para gasolina/diésel, usar km de depósito"
+                                name="./p1Range"/>
+
+                            <cons jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Consumo (l/100 km o kWh/100 km)"
+                                fieldDescription="Ej: 5.2"
+                                name="./p1Cons" step="0.1"/>
+
+                            <bar1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Barra Rendimiento (0-100)"
+                                fieldDescription="Ej: 75"
+                                name="./p1Bar1"/>
+
+                            <bar2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Barra Eficiencia (0-100)"
+                                fieldDescription="Ej: 85"
+                                name="./p1Bar2"/>
+
+                        </items>
+                    </vehicle1>
+
+                    <!-- ═══════════════════════════════════
+                         PESTAÑA 3 — Vehículo 2
+                         ═══════════════════════════════════ -->
+                    <vehicle2 jcr:primaryType="nt:unstructured"
+                        jcr:title="Vehículo 2 (Tab 2)"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <acel jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Aceleración 0–100 km/h (segundos)"
+                                name="./p2Acel" step="0.1"/>
+
+                            <pot jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Potencia (CV)"
+                                name="./p2Pot"/>
+
+                            <range jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Autonomía (km)"
+                                name="./p2Range"/>
+
+                            <cons jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Consumo (l/100 km o kWh/100 km)"
+                                name="./p2Cons" step="0.1"/>
+
+                            <bar1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Barra Rendimiento (0-100)"
+                                name="./p2Bar1"/>
+
+                            <bar2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Barra Eficiencia (0-100)"
+                                name="./p2Bar2"/>
+
+                        </items>
+                    </vehicle2>
+
+                    <!-- ═══════════════════════════════════
+                         PESTAÑA 4 — Vehículo 3
+                         ═══════════════════════════════════ -->
+                    <vehicle3 jcr:primaryType="nt:unstructured"
+                        jcr:title="Vehículo 3 (Tab 3)"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <acel jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Aceleración 0–100 km/h (segundos)"
+                                name="./p3Acel" step="0.1"/>
+
+                            <pot jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Potencia (CV)"
+                                name="./p3Pot"/>
+
+                            <range jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Autonomía (km)"
+                                name="./p3Range"/>
+
+                            <cons jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Consumo (l/100 km o kWh/100 km)"
+                                name="./p3Cons" step="0.1"/>
+
+                            <bar1 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Barra Rendimiento (0-100)"
+                                name="./p3Bar1"/>
+
+                            <bar2 jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Barra Eficiencia (0-100)"
+                                name="./p3Bar2"/>
+
+                        </items>
+                    </vehicle3>
+
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

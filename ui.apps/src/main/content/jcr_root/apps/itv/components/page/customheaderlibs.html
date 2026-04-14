@@ -13,8 +13,36 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
-    <sly data-sly-call="${clientlib.css @ categories='itv.base'}"/>
-</sly>
 
+<head>
+    <meta charset="UTF-8"/>
+    <title>${properties.jcr:title}</title>
+
+    <!-- Clientlibs base de AEM -->
+    <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+        <sly data-sly-call="${clientlib.css @ categories='itv.base'}"/>
+    </sly>
+
+    <!-- Google Analytics 4 (GA4) -->
+    <!-- Google tag (gtag.js) -->
+<!-- Google Analytics 4 (GA4) con mensaje de confirmación -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-77VD00B277"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+    gtag('config', 'G-77VD00B277');
+
+    // Mensaje de confirmación en consola
+    console.log('%cGoogle Analytics 4 (GA4) cargado correctamente', 
+                'color: #8b2633; font-size: 14px;');
+    
+    console.log('%cMeasurement ID: G-77VD00B277 | Modo: Desarrollo Local', 
+                'color: #848181; font-size: 12px;');
+    </script>
+
+</head>
+
+<!-- Contexthub (lo dejamos fuera del head, como estaba) -->
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
