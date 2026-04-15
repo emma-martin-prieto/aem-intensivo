@@ -4,7 +4,9 @@
 <section class="brands">
     <div class="brands__container">
 
-        <div class="brands__header">
+        <div class="brands__header"
+             data-aos="fade-up"
+             data-aos-duration="900">
             <span class="brands__tag">${properties.tag || 'BMW Group Universe'}</span>
             <h2 class="brands__title">${properties.title || 'Más que una marca'}</h2>
             <p class="brands__intro">${properties.intro || 'Explora nuestras divisiones.'}</p>
@@ -14,7 +16,10 @@
             <sly data-sly-list.item="${resource.children}">
                 <sly data-sly-test="${item.name == 'brands'}">
                     <sly data-sly-list.brand="${item.children}">
-                        <div class="brands__item" data-sly-test="${brand.imagePath}">
+                        <div class="brands__item"
+                             data-sly-test="${brand.imagePath}"
+                             data-aos="zoom-in"
+                             data-aos-duration="900">
                             <a href="${brand.linkUrl}" 
                                class="brands__link" 
                                data-sly-unwrap="${!brand.linkUrl}">

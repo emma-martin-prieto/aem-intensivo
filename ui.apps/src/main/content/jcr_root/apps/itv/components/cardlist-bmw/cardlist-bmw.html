@@ -1,13 +1,16 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories='itv.site'}"/>
 
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+     
 <section class="bmw-elite-group">
     <div class="bmw-elite-group__wrapper" data-sly-list.item="${resource.getChildren}">
         
         <div data-sly-test="${item.name == 'cards'}" data-sly-unwrap>
             <div data-sly-list.card="${item.getChildren}" data-sly-unwrap>
                 
-                <article class="bmw-elite-card">
+                <article class="bmw-elite-card" data-aos="fade-up" data-aos-duration="900">
                     <div class="bmw-elite-card__image-container">
                         <img src="${card.imagePath || '/content/dam/itv/Coche.png'}" alt="${card.modelTitle}" class="bmw-elite-card__image">
                         <div class="bmw-elite-card__image-overlay"></div>
