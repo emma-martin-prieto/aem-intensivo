@@ -5,17 +5,30 @@
     <div class="about-hero__container">
 
         <div class="about-hero__content">
-            <span class="about-hero__tag">${properties.tag || 'Sobre BuyCar'}</span>
+            <span class="about-hero__tag"
+                  data-aos="fade-up"
+                  data-aos-duration="800">
+                ${properties.tag || 'Sobre BuyCar'}
+            </span>
 
-            <h1 class="about-hero__title">
+            <h1 class="about-hero__title"
+                data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-delay="100">
                 ${properties.title || 'Pasión por la automoción, confianza en cada decisión'}
             </h1>
 
-            <p class="about-hero__text">
+            <p class="about-hero__text"
+               data-aos="fade-up"
+               data-aos-duration="1000"
+               data-aos-delay="200">
                 ${properties.description || 'En BuyCar trabajamos con diferentes marcas para ofrecer una experiencia de compra clara, cercana y adaptada a cada cliente. Queremos ayudarte a encontrar el vehículo perfecto con asesoramiento experto y una atención realmente personalizada.'}
             </p>
 
-            <div class="about-hero__stats">
+            <div class="about-hero__stats"
+                 data-aos="fade-up"
+                 data-aos-duration="1100"
+                 data-aos-delay="300">
                 <div class="about-hero__stat">
                     <span class="about-hero__stat-number">${properties.statOneNumber || '+10'}</span>
                     <span class="about-hero__stat-label">${properties.statOneLabel || 'marcas disponibles'}</span>
@@ -28,10 +41,16 @@
             </div>
         </div>
 
-        <div class="about-hero__media">
+        <div class="about-hero__media"
+             data-aos="fade-left"
+             data-aos-duration="1200"
+             data-aos-delay="150">
             <img src="${properties.imagePath}" alt="${properties.imageAlt || 'Equipo BuyCar'}" class="about-hero__image" data-sly-test="${properties.imagePath}"/>
 
-            <div class="about-hero__floating-card">
+            <div class="about-hero__floating-card"
+                 data-aos="zoom-in"
+                 data-aos-duration="900"
+                 data-aos-delay="350">
                 <span class="about-hero__floating-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                         <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0m10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
