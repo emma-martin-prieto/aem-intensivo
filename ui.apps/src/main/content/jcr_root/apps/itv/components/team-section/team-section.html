@@ -4,9 +4,7 @@
 <section class="team-section">
     <div class="team-section__container">
 
-        <div class="team-section__header"
-             data-aos="fade-up"
-             data-aos-duration="900">
+        <div class="team-section__header" data-aos="fade-up" data-aos-duration="900">
             <span class="team-section__tag">${properties.tag || 'Nuestro equipo'}</span>
             <h2 class="team-section__title">
                 ${properties.title || 'Personas que hacen posible la experiencia BuyCar'}
@@ -18,40 +16,30 @@
 
         <div class="team-section__grid">
 
-            <article class="team-section__card"
-                     data-aos="fade-up"
-                     data-aos-duration="900">
-                <img src="${properties.member1Image}" alt="${properties.member1Name || 'Miembro del equipo'}" class="team-section__image" data-sly-test="${properties.member1Image}"/>
-                <div class="team-section__content">
-                    <h3>${properties.member1Name || 'Laura Gómez'}</h3>
-                    <span class="team-section__role">${properties.member1Role || 'Dirección comercial'}</span>
-                    <p>${properties.member1Text || 'Coordina la estrategia comercial y trabaja para que cada cliente viva una experiencia clara, cercana y de confianza.'}</p>
-                </div>
-            </article>
+            <sly data-sly-list.item="${resource.children}">
+                <sly data-sly-test="${item.name == 'teamMembers'}">
+                    <sly data-sly-list.member="${item.children}">
+                        <article class="team-section__card"
+                                data-aos="fade-up"
+                                data-aos-duration="900">
 
-            <article class="team-section__card"
-                     data-aos="fade-up"
-                     data-aos-duration="900"
-                     data-aos-delay="100">
-                <img src="${properties.member2Image}" alt="${properties.member2Name || 'Miembro del equipo'}" class="team-section__image" data-sly-test="${properties.member2Image}"/>
-                <div class="team-section__content">
-                    <h3>${properties.member2Name || 'Carlos Martín'}</h3>
-                    <span class="team-section__role">${properties.member2Role || 'Asesor de ventas'}</span>
-                    <p>${properties.member2Text || 'Acompaña a cada cliente en la búsqueda del vehículo ideal, resolviendo dudas y ofreciendo una atención personalizada.'}</p>
-                </div>
-            </article>
+                            <div class="team-section__image-wrapper">
+                                <img src="${member.properties.image @ context='uri'}"
+                                    alt="${member.properties.name || 'Miembro del equipo'}"
+                                    class="team-section__image"
+                                    data-sly-test="${member.properties.image}"/>
+                                <div class="team-section__image-overlay"></div>
+                            </div>
 
-            <article class="team-section__card"
-                     data-aos="fade-up"
-                     data-aos-duration="900"
-                     data-aos-delay="200">
-                <img src="${properties.member3Image}" alt="${properties.member3Name || 'Miembro del equipo'}" class="team-section__image" data-sly-test="${properties.member3Image}"/>
-                <div class="team-section__content">
-                    <h3>${properties.member3Name || 'Andrea Ruiz'}</h3>
-                    <span class="team-section__role">${properties.member3Role || 'Atención al cliente'}</span>
-                    <p>${properties.member3Text || 'Se encarga de que cada contacto con BuyCar sea ágil, cómodo y cercano, cuidando cada detalle de la experiencia.'}</p>
-                </div>
-            </article>
+                            <div class="team-section__content">
+                                <h3>${member.properties.name}</h3>
+                                <span class="team-section__role">${member.properties.role}</span>
+                                <p>${member.properties.description}</p>
+                            </div>
+                        </article>
+                    </sly>
+                </sly>
+            </sly>
 
         </div>
     </div>

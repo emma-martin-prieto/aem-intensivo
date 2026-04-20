@@ -1,18 +1,50 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories='itv.site'}"/>
 
-<div class="cookie-banner" id="cookieBanner">
+<div class="cookie-banner cookie-banner--hidden" id="cookieBanner">
     <div class="cookie-banner__content">
         <p class="cookie-banner__text">
             Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de la web.
             Puedes aceptar o rechazar las cookies analíticas.
+            <button type="button" id="cookiePolicyLink" class="cookie-banner__policy-link">
+                Más información
+            </button>
         </p>
-
         <div class="cookie-banner__actions">
             <button type="button" id="cookieReject" class="cookie-banner__btn cookie-banner__btn--secondary">
                 Rechazar
             </button>
             <button type="button" id="cookieAccept" class="cookie-banner__btn cookie-banner__btn--primary">
+                Aceptar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal política de cookies -->
+<div class="cookie-modal cookie-modal--hidden" id="cookieModal">
+    <div class="cookie-modal__overlay" id="cookieModalOverlay"></div>
+    <div class="cookie-modal__box">
+        <button type="button" class="cookie-modal__close" id="cookieModalClose">✕</button>
+        <h2 class="cookie-modal__title">Política de Cookies</h2>
+        <p>BuyCar utiliza cookies propias y de terceros para mejorar la experiencia de navegación y ofrecer contenidos de interés.</p>
+
+        <h3 class="cookie-modal__subtitle">¿Qué son las cookies?</h3>
+        <p>Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando visitas una página web. Permiten que el sitio recuerde tus acciones y preferencias durante un periodo de tiempo.</p>
+
+        <h3 class="cookie-modal__subtitle">Tipos de cookies que utilizamos</h3>
+        <p><strong>Cookies técnicas:</strong> Necesarias para el funcionamiento básico del sitio. No pueden desactivarse.</p>
+        <p><strong>Cookies analíticas:</strong> Nos permiten medir el tráfico y el comportamiento de los usuarios mediante Google Analytics.</p>
+        <p><strong>Cookies de personalización:</strong> Recuerdan tus preferencias de navegación para ofrecerte una experiencia más adaptada.</p>
+
+        <h3 class="cookie-modal__subtitle">¿Cómo desactivarlas?</h3>
+        <p>Puedes configurar tu navegador para rechazar o eliminar cookies en cualquier momento. Ten en cuenta que desactivarlas puede afectar al funcionamiento de algunas partes del sitio.</p>
+
+        <div class="cookie-modal__actions">
+            <button type="button" id="cookieModalReject" class="cookie-banner__btn cookie-banner__btn--secondary">
+                Rechazar
+            </button>
+            <button type="button" id="cookieModalAccept" class="cookie-banner__btn cookie-banner__btn--primary">
                 Aceptar
             </button>
         </div>

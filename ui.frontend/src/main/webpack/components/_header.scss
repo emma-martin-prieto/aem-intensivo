@@ -1,5 +1,7 @@
 /* 1. RESET AEM */
-.root.container, .responsivegrid, .aem-Grid {
+.root.container,
+.responsivegrid,
+.aem-Grid {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
@@ -7,7 +9,8 @@
     overflow: visible !important;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden !important;
 }
 
@@ -33,21 +36,16 @@ header.header-lp {
     margin: 0 auto !important;
     height: 100% !important;
     box-sizing: border-box !important;
-
-    padding: 0 160px !important;
-    @media (max-width: 1919px) {
-        padding: 0 calc(16px + (160 - 16) * ((100vw - 1024px) / (1920 - 1024))) !important;
-    }
-    @media (max-width: 1024px) {
-        padding: 0 16px !important;
-    }
+    padding: 0 90px !important;
 }
 
 /* 3. LOGO Y NAVEGACIÓN */
 .header-lp__left-group {
     display: flex !important;
     align-items: center !important;
-    gap: 40px !important;
+    gap: 56px !important; /* más espacio entre logo y nav */
+    flex: 1 !important;
+    min-width: 0 !important;
 }
 
 .header-lp__logo {
@@ -58,6 +56,7 @@ header.header-lp {
     font-size: 32px !important;
     font-weight: bold !important;
     color: #ffffff !important;
+    flex-shrink: 0 !important;
 }
 
 .header-lp__logo img {
@@ -67,41 +66,46 @@ header.header-lp {
     object-fit: contain !important;
 }
 
+.header-lp__nav--desktop {
+    display: flex !important;
+    flex: 1 !important;
+    align-items: center !important;
+    min-width: 0 !important;
+}
+
 .header-lp__list {
     display: flex !important;
     list-style: none !important;
-    gap: 24px !important;
+    gap: 48px !important; /* más separación entre palabras */
     margin: 0 !important;
     padding: 32px 0 24px 0 !important;
-
-    @media (max-width: 620px) {
-        display: none !important;
-    }
+    width: 100% !important;
+    align-items: center !important;
+    min-width: 0 !important;
 }
 
 .header-lp__link {
     color: #ffffff !important;
     text-decoration: none !important;
-    font-size: 16px !important;
+    font-size: 20px !important;
     font-weight: 500 !important;
     display: inline-block !important;
     padding-bottom: 8px !important;
     border-bottom: 2px solid transparent !important;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease !important;
     line-height: 1 !important;
+    white-space: nowrap !important;
 }
 
-/* Hover */
 .header-lp__link:hover {
     border-bottom: 2px solid #ffffff !important;
 }
 
-/* Activo REAL (AEM) */
 .header-lp__item--active .header-lp__link {
     border-bottom: 2px solid #ffffff !important;
 }
 
-/* 4. BOTÓN WHATSAPP */
+/* 4. BOTÓN TELÉFONO / WHATSAPP */
 .header-lp__right-group {
     background-color: #008080 !important;
     width: 154px !important;
@@ -111,10 +115,8 @@ header.header-lp {
     align-items: center !important;
     justify-content: center !important;
     overflow: hidden !important;
-
-    @media (max-width: 620px) {
-        display: none !important;
-    }
+    flex-shrink: 0 !important;
+    margin-left: 24px !important;
 }
 
 .header-lp__button {
@@ -140,9 +142,25 @@ header.header-lp {
     color: #ffffff !important;
     font-weight: 600 !important;
     font-size: 14px !important;
+    white-space: nowrap !important;
 }
 
-/* 5. MENÚ HAMBURGUESA Y DESPLEGABLE */
+/* 5. SOLO EL ÚLTIMO ITEM EN DESKTOP */
+.header-lp__list .header-lp__item:last-child {
+    margin-left: 8px !important;   /* pequeño respiro respecto al resto */
+    margin-right: 0 !important;
+}
+
+.header-lp__list .header-lp__item:last-child .header-lp__link {
+    color: #ff6b35 !important;
+    border-bottom-color: transparent !important;
+}
+
+.header-lp__list .header-lp__item:last-child .header-lp__link:hover {
+    border-bottom-color: #ff6b35 !important;
+}
+
+/* 6. MENÚ HAMBURGUESA */
 .header-lp__burger {
     display: none !important;
     flex-direction: column !important;
@@ -150,35 +168,114 @@ header.header-lp {
     width: 26px !important;
     height: 18px !important;
     cursor: pointer !important;
-
-    @media (max-width: 620px) {
-        display: flex !important;
-    }
-
-    span {
-        display: block !important;
-        width: 100% !important;
-        height: 3px !important;
-        background-color: #ffffff !important;
-        transition: 0.3s ease;
-    }
-
-    &.is-active {
-        span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-        span:nth-child(2) { opacity: 0; }
-        span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-    }
+    flex-shrink: 0 !important;
 }
 
-.header-lp__nav--desktop {
-    display: flex !important;
+.header-lp__burger span {
+    display: block !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: #ffffff !important;
+    transition: 0.3s ease !important;
+}
+
+.header-lp__burger.is-active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg) !important;
+}
+
+.header-lp__burger.is-active span:nth-child(2) {
+    opacity: 0 !important;
+}
+
+.header-lp__burger.is-active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg) !important;
 }
 
 .header-lp__nav--mobile {
     display: none !important;
 }
 
-@media (max-width: 620px) {
+/* 7. AJUSTES PROGRESIVOS ANTES DEL HAMBURGUESA */
+@media (max-width: 1200px) {
+    .header-lp__container {
+        padding: 0 64px !important;
+    }
+
+    .header-lp__left-group {
+        gap: 42px !important;
+    }
+
+    .header-lp__list {
+        gap: 32px !important;
+    }
+}
+
+@media (max-width: 1050px) {
+    .header-lp__container {
+        padding: 0 40px !important;
+    }
+
+    .header-lp__left-group {
+        gap: 28px !important;
+    }
+
+    .header-lp__list {
+        gap: 16px !important;
+    }
+
+    .header-lp__link {
+        font-size: 18px !important;
+    }
+
+    .header-lp__right-group {
+        transform: scale(0.95) !important;
+        transform-origin: center right !important;
+        margin-left: 16px !important;
+    }
+}
+
+@media (max-width: 960px) {
+    .header-lp__container {
+        padding: 0 24px !important;
+    }
+
+    .header-lp__left-group {
+        gap: 18px !important;
+    }
+
+    .header-lp__list {
+        gap: 12px !important;
+    }
+
+    .header-lp__link {
+        font-size: 16px !important;
+    }
+
+    .header-lp__right-group {
+        transform: scale(0.9) !important;
+        transform-origin: center right !important;
+        margin-left: 12px !important;
+    }
+}
+
+/* 8. MOBILE / HAMBURGUESA DESDE 900PX */
+@media (max-width: 635px) {
+    .header-lp__container {
+        padding: 0 16px !important;
+    }
+
+    .header-lp__nav--desktop {
+        display: none !important;
+    }
+
+    .header-lp__right-group {
+        display: none !important;
+    }
+
+    .header-lp__burger {
+        display: flex !important;
+    }
+
     .header-lp__nav--mobile {
         display: none !important;
         position: fixed !important;
@@ -199,7 +296,6 @@ header.header-lp {
         pointer-events: all !important;
     }
 
-    /* Neutralizar nav interno de AEM */
     .header-lp__nav--mobile nav,
     .header-lp__nav--mobile .header-lp__nav {
         display: block !important;
@@ -209,7 +305,6 @@ header.header-lp {
         background: transparent !important;
     }
 
-    /* Lista */
     .header-lp__nav--mobile ul,
     .header-lp__nav--mobile .header-lp__list,
     .header-lp__nav--mobile .cmp-navigation__group {
@@ -220,9 +315,9 @@ header.header-lp {
         padding: 40px 0 !important;
         gap: 0 !important;
         height: auto !important;
+        width: 100% !important;
     }
 
-    /* Items */
     .header-lp__nav--mobile li,
     .header-lp__nav--mobile .header-lp__item,
     .header-lp__nav--mobile .cmp-navigation__item {
@@ -230,13 +325,15 @@ header.header-lp {
         width: 100% !important;
         border-bottom: 1px solid #333333 !important;
         padding-bottom: 0 !important;
+        margin: 0 !important;
+        text-align: center !important;
     }
 
-    /* Links — cubre también el primer item activo del desktop */
     .header-lp__nav--mobile a,
     .header-lp__nav--mobile .header-lp__link,
     .header-lp__nav--mobile .cmp-navigation__item-link {
         display: block !important;
+        width: 100% !important;
         color: #ffffff !important;
         font-size: 22px !important;
         font-weight: 500 !important;
@@ -244,12 +341,23 @@ header.header-lp {
         text-align: center !important;
         text-decoration: none !important;
         line-height: 1.2 !important;
+        margin: 0 auto !important;
     }
-    .header-lp__nav--mobile .header-lp__item:first-child .header-lp__link,
-    .header-lp__nav--mobile .cmp-navigation__item:first-child a {
-        padding-bottom: 20px !important;
-        display: block !important;
-        width: 100% !important;
+
+    .header-lp__nav--mobile .header-lp__item:last-child,
+    .header-lp__nav--mobile .cmp-navigation__item:last-child {
+        border-top: 1px solid #444444 !important;
+        margin-top: 12px !important;
         text-align: center !important;
+    }
+
+    .header-lp__nav--mobile .header-lp__item:last-child .header-lp__link,
+    .header-lp__nav--mobile .cmp-navigation__item:last-child a {
+        color: #ff6b35 !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 }

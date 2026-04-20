@@ -1,0 +1,104 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='itv.site'}"/>
+
+<!-- STATS -->
+<section class="about-impact-stats" id="aboutImpactStats">
+    <div class="about-impact-stats__inner">
+        <div class="about-impact-stats__item">
+            <span class="about-impact-stats__suffix">+</span>
+            <span class="about-impact-stats__number" data-target="${properties.stat1Number || '1250'}">0</span>
+            <span class="about-impact-stats__label">${properties.stat1Label || 'Clientes satisfechos'}</span>
+        </div>
+        <div class="about-impact-stats__item">
+            <span class="about-impact-stats__suffix">+</span>
+            <span class="about-impact-stats__number" data-target="${properties.stat2Number || '920'}">0</span>
+            <span class="about-impact-stats__label">${properties.stat2Label || 'Vehículos vendidos'}</span>
+        </div>
+        <div class="about-impact-stats__item">
+            <span class="about-impact-stats__number" data-target="${properties.stat3Number || '18'}">0</span>
+            <span class="about-impact-stats__label">${properties.stat3Label || 'Marcas disponibles'}</span>
+        </div>
+        <div class="about-impact-stats__item">
+            <span class="about-impact-stats__number" data-target="${properties.stat4Number || '4.9'}">0</span>
+            <span class="about-impact-stats__suffix">%</span>
+            <span class="about-impact-stats__label">${properties.stat4Label || 'Satisfacción media'}</span>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE (usando tus campos fijos) -->
+<section class="about-impact-timeline">
+    <div class="about-impact-timeline__container">
+
+        <div class="about-impact-timeline__header">
+            <span class="about-impact-timeline__tag">${properties.timelineTag || 'Nuestra historia'}</span>
+            <h2 class="about-impact-timeline__title">${properties.timelineTitle || 'Cómo nació BuyCar'}</h2>
+        </div>
+
+        <div class="about-impact-timeline__track">
+            <div class="about-impact-timeline__line">
+                <div class="about-impact-timeline__line-fill" id="aboutTimelineFill"></div>
+            </div>
+
+            <!-- Hito 1 -->
+            <div class="about-impact-timeline__item" data-tl-item>
+                <div class="about-impact-timeline__card">
+                    <span class="about-impact-timeline__year">${properties.year1}</span>
+                    <p class="about-impact-timeline__event">${properties.event1}</p>
+                    <p class="about-impact-timeline__desc">${properties.desc1}</p>
+                </div>
+                <div class="about-impact-timeline__dot-col"><div class="about-impact-timeline__dot"></div></div>
+                <div class="about-impact-timeline__empty"></div>
+            </div>
+
+            <!-- Hito 2 -->
+            <div class="about-impact-timeline__item about-impact-timeline__item--right" data-tl-item>
+                <div class="about-impact-timeline__empty"></div>
+                <div class="about-impact-timeline__dot-col"><div class="about-impact-timeline__dot"></div></div>
+                <div class="about-impact-timeline__card">
+                    <span class="about-impact-timeline__year">${properties.year2}</span>
+                    <p class="about-impact-timeline__event">${properties.event2}</p>
+                    <p class="about-impact-timeline__desc">${properties.desc2}</p>
+                </div>
+            </div>
+
+            <!-- Hito 3 -->
+            <div class="about-impact-timeline__item" data-tl-item>
+                <div class="about-impact-timeline__card">
+                    <span class="about-impact-timeline__year">${properties.year3}</span>
+                    <p class="about-impact-timeline__event">${properties.event3}</p>
+                    <p class="about-impact-timeline__desc">${properties.desc3}</p>
+                </div>
+                <div class="about-impact-timeline__dot-col"><div class="about-impact-timeline__dot"></div></div>
+                <div class="about-impact-timeline__empty"></div>
+            </div>
+
+            <!-- Hito 4 -->
+            <div class="about-impact-timeline__item about-impact-timeline__item--right" data-tl-item>
+                <div class="about-impact-timeline__empty"></div>
+                <div class="about-impact-timeline__dot-col"><div class="about-impact-timeline__dot"></div></div>
+                <div class="about-impact-timeline__card">
+                    <span class="about-impact-timeline__year">${properties.year4}</span>
+                    <p class="about-impact-timeline__event">${properties.event4}</p>
+                    <p class="about-impact-timeline__desc">${properties.desc4}</p>
+                </div>
+            </div>
+
+            <!-- Hito 5 -->
+            <div class="about-impact-timeline__item" data-tl-item>
+                <div class="about-impact-timeline__card">
+                    <span class="about-impact-timeline__year">${properties.year5}</span>
+                    <p class="about-impact-timeline__event">${properties.event5}</p>
+                    <p class="about-impact-timeline__desc">${properties.desc5}</p>
+                </div>
+                <div class="about-impact-timeline__dot-col"><div class="about-impact-timeline__dot"></div></div>
+                <div class="about-impact-timeline__empty"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<sly data-sly-test="${wcmmode.edit && !properties.timelineTitle}">
+    <div class="cq-placeholder" data-emptytext="About Impact"></div>
+</sly>

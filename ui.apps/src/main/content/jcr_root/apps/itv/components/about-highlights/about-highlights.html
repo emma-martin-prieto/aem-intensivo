@@ -4,71 +4,64 @@
 <section class="about-highlights">
     <div class="about-highlights__container">
 
-        <div class="about-highlights__header"
-             data-aos="fade-up"
-             data-aos-duration="900">
+        <div class="about-highlights__header" data-aos="fade-up" data-aos-duration="800">
             <span class="about-highlights__tag">${properties.tag || 'Nuestra esencia'}</span>
             <h2 class="about-highlights__title">
                 ${properties.title || 'Lo que hace diferente a BuyCar'}
             </h2>
             <p class="about-highlights__intro">
-                ${properties.intro || 'Combinamos variedad de marcas, asesoramiento cercano y una experiencia visual pensada para que elegir coche sea más fácil, cómoda y clara.'}
+                ${properties.intro || 'Combinamos variedad de marcas, asesoramiento cercano y una experiencia pensada para que elegir tu próximo coche sea más fácil, cómoda y clara.'}
             </p>
         </div>
 
         <div class="about-highlights__grid">
 
-            <article class="about-highlights__card"
-                     data-aos="fade-up"
-                     data-aos-duration="900">
+            <!-- Tarjeta 1 -->
+            <article class="about-highlights__card" data-aos="fade-up" data-aos-duration="900">
                 <span class="about-highlights__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0m10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                        <path d="M6 1a1 1 0 0 0-.8.4L3.6 3.5H2a2 2 0 0 0-2 2V9a2 2 0 0 0 2 2h.17a3 3 0 0 0 5.66 0h.34a3 3 0 0 0 5.66 0H14a2 2 0 0 0 2-2V6.5a2 2 0 0 0-.59-1.41l-2.5-2.5A2 2 0 0 0 11.5 2H10.4l-.6-1.2A1 1 0 0 0 8.9.2h-2.9Zm.5 1h2.2l.5 1H6l.5-1Z"/>
-                    </svg>
-                </span>
-                <h3>${properties.card1Title || 'Selección multimarca'}</h3>
-                <p>${properties.card1Text || 'Reunimos distintas marcas en un mismo lugar para ofrecerte más variedad y más posibilidades de elección.'}</p>
-            </article>
-
-            <article class="about-highlights__card"
-                     data-aos="fade-up"
-                     data-aos-duration="900"
-                     data-aos-delay="100">
-                <span class="about-highlights__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 0a5 5 0 0 0-5 5c0 1.657.672 3.157 1.757 4.243.763.763 1.51 1.52 2.243 2.257.733-.737 1.48-1.494 2.243-2.257A5.98 5.98 0 0 0 13 5a5 5 0 0 0-5-5m0 7.5A2.5 2.5 0 1 1 8 2.5a2.5 2.5 0 0 1 0 5"/>
                         <path d="M2.5 14a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                     </svg>
                 </span>
-                <h3>${properties.card2Title || 'Asesoramiento cercano'}</h3>
-                <p>${properties.card2Text || 'Nuestro equipo te acompaña en todo el proceso con una atención clara, profesional y personalizada.'}</p>
+                <h3>${properties.card1Title || 'Selección multimarca'}</h3>
+                <p>${properties.card1Text || 'Reunimos más de 15 marcas en un solo espacio para darte la mayor libertad de elección.'}</p>
             </article>
 
-            <article class="about-highlights__card"
-                     data-aos="fade-up"
-                     data-aos-duration="900"
-                     data-aos-delay="200">
+            <!-- Tarjeta 2 -->
+            <article class="about-highlights__card" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
                 <span class="about-highlights__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0zm0 2h16v6a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm3 2.5a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3.293l2.146 2.147a.5.5 0 0 1-.708.708l-2.5-2.5a.5.5 0 0 1-.146-.354V4.5A.5.5 0 0 1 8 4"/>
                     </svg>
                 </span>
-                <h3>${properties.card3Title || 'Experiencia visual y moderna'}</h3>
-                <p>${properties.card3Text || 'Diseñamos un entorno más intuitivo para que comparar, descubrir y contactar sea una experiencia sencilla.'}</p>
+                <h3>${properties.card2Title || 'Asesoramiento cercano'}</h3>
+                <p>${properties.card2Text || 'Te acompañamos en todo el proceso con atención personalizada y sin presión.'}</p>
             </article>
 
-            <article class="about-highlights__card"
-                     data-aos="fade-up"
-                     data-aos-duration="900"
-                     data-aos-delay="300">
+            <!-- Tarjeta 3 -->
+            <article class="about-highlights__card" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
                 <span class="about-highlights__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M8 0c-.69 0-1.328.178-1.894.516L1.5 3.5A1 1 0 0 0 1 4.366v3.268c0 3.513 2.387 6.906 6.594 8.318a1 1 0 0 0 .812 0C12.613 14.54 15 11.147 15 7.634V4.366a1 1 0 0 0-.5-.866L9.894.516A3.99 3.99 0 0 0 8 0"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M6 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4m0 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m5-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+                    </svg>
+                </span>
+                <h3>${properties.card3Title || 'Experiencia visual moderna'}</h3>
+                <p>${properties.card3Text || 'Diseñamos un proceso intuitivo y visual para que comparar y elegir sea más fácil.'}</p>
+            </article>
+
+            <!-- Tarjeta 4 -->
+            <article class="about-highlights__card" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+                <span class="about-highlights__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13"/>
+                        <path d="M7.5 4a.5.5 0 0 1 .5.5v4.293l2.146 2.147a.5.5 0 0 1-.708.708l-2.5-2.5a.5.5 0 0 1-.146-.354V4.5a.5.5 0 0 1 .5-.5"/>
                     </svg>
                 </span>
                 <h3>${properties.card4Title || 'Confianza en cada paso'}</h3>
-                <p>${properties.card4Text || 'Queremos que cada cliente tome su decisión con seguridad, información clara y la tranquilidad de sentirse bien acompañado.'}</p>
+                <p>${properties.card4Text || 'Transparencia total, precios claros y acompañamiento real desde el primer contacto hasta la entrega.'}</p>
             </article>
 
         </div>
@@ -76,5 +69,5 @@
 </section>
 
 <sly data-sly-test="${wcmmode.edit && !properties.title}">
-    <div class="cq-placeholder" data-emptytext="About Highlights"></div>
+    <div class="cq-placeholder" data-emptytext="Lo que nos hace diferentes"></div>
 </sly>

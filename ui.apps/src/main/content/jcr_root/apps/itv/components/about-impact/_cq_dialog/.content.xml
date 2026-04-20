@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="About Impact"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- TAB: ESTADÍSTICAS -->
+            <stats
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Estadísticas"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <stat1Number
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Número estadística 1"
+                        name="./stat1Number"
+                        emptyText="1250"/>
+
+                    <stat1Label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Texto estadística 1"
+                        name="./stat1Label"
+                        emptyText="Clientes satisfechos"/>
+
+                    <stat2Number
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Número estadística 2"
+                        name="./stat2Number"
+                        emptyText="920"/>
+
+                    <stat2Label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Texto estadística 2"
+                        name="./stat2Label"
+                        emptyText="Vehículos vendidos"/>
+
+                    <stat3Number
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Número estadística 3"
+                        name="./stat3Number"
+                        emptyText="18"/>
+
+                    <stat3Label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Texto estadística 3"
+                        name="./stat3Label"
+                        emptyText="Marcas disponibles"/>
+
+                    <stat4Number
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Número estadística 4"
+                        name="./stat4Number"
+                        emptyText="4.9"/>
+
+                    <stat4Label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Texto estadística 4"
+                        name="./stat4Label"
+                        emptyText="Satisfacción media"/>
+
+                </items>
+            </stats>
+
+            <!-- TAB: TIMELINE (Multifield correcto) -->
+            <timeline
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Timeline / Historia"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <timelineTag
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Etiqueta"
+                        name="./timelineTag"
+                        emptyText="Nuestra historia"/>
+
+                    <timelineTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Título principal"
+                        name="./timelineTitle"
+                        emptyText="Cómo nació BuyCar"/>
+
+                    <!-- Multifield dinámico para hitos -->
+                    <timelineItems
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldLabel="Hitos de la historia (pulsa + para añadir)"
+                        composite="{Boolean}true">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./timeline">
+
+                            <items jcr:primaryType="nt:unstructured">
+                                <year
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Año"
+                                    name="./year"
+                                    emptyText="2022"/>
+
+                                <event
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Título del hito"
+                                    name="./event"
+                                    emptyText="La idea que lo cambió todo"/>
+
+                                <description
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Descripción"
+                                    name="./description"/>
+                            </items>
+                        </field>
+                    </timelineItems>
+
+                </items>
+            </timeline>
+
+        </items>
+    </content>
+</jcr:root>
