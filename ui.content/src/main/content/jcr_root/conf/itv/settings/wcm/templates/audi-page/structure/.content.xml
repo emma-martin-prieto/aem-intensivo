@@ -3,9 +3,9 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:lastModified="{Date}2026-04-09T13:02:20.493+02:00"
+        cq:lastModified="{Date}2026-04-13T11:19:45.668+02:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/itv/settings/wcm/templates/landing-page-bmw"
+        cq:template="/conf/itv/settings/wcm/templates/audi-page"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="itv/components/page">
         <root
@@ -13,7 +13,7 @@
             sling:resourceType="itv/components/container"
             layout="responsiveGrid">
             <experiencefragment-header
-                jcr:lastModified="{Date}2026-04-09T13:01:51.719+02:00"
+                jcr:lastModified="{Date}2026-04-13T11:19:45.664+02:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="itv/components/experiencefragment"
@@ -23,10 +23,10 @@
                 sling:resourceType="itv/components/container"
                 editable="{Boolean}true"
                 layout="responsiveGrid"/>
-            <experiencefragment_704078779
-                jcr:created="{Date}2026-04-09T12:59:24.577+02:00"
+            <experiencefragment
+                jcr:created="{Date}2026-04-13T11:18:49.378+02:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2026-04-09T13:02:20.489+02:00"
+                jcr:lastModified="{Date}2026-04-13T11:19:05.318+02:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="itv/components/experiencefragment"

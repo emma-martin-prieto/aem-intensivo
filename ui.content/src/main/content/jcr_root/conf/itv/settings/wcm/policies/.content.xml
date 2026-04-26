@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <rep:policy/>
@@ -34,11 +34,11 @@
                     jcr:title="Content Image"
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
-                    disableLazyLoading="false"
-                    enableAssetDelivery="true"
                     allowUpload="false"
                     altValueFromDAM="true"
+                    disableLazyLoading="false"
                     displayPopupTitle="true"
+                    enableAssetDelivery="true"
                     isDecorative="false"
                     jpegQuality="{Long}85"
                     titleValueFromDAM="true"
@@ -207,11 +207,16 @@
             </experiencefragment>
             <container jcr:primaryType="nt:unstructured">
                 <policy_1574694950110
+                    cq:styleDefaultClasses="page-audi"
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2026-04-14T10:40:34.938+02:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Page Root"
+                    jcr:title="Audi Page Policy"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:AEM Intensivo - Content,/apps/itv/components/form/container,group:AEM Intensivo - Structure]">
+                    components="[/apps/itv/components/experiencefragment,/apps/itv/components/about-hero,/apps/itv/components/about-highlights,/apps/itv/components/specs-audi,/apps/itv/components/models-header-bmw,/apps/itv/components/brands,/apps/itv/components/cardlist-audi,/apps/itv/components/contact-section-lp,/apps/itv/components/cookie-banner-lp,/apps/itv/components/hero-audi,/apps/wknd/components/experiencefragment]"
+                    layout="simple"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -237,11 +242,17 @@
                     </cq:authoring>
                 </policy_1574694950110>
                 <policy_1574695586800
+                    cq:styleDefaultClasses="page-bmw"
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2026-04-17T10:08:13.551+02:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Page Content"
+                    jcr:title="Landing Page BMW"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:AEM Intensivo - Content,/apps/itv/components/form/container]">
+                    columns="12"
+                    components="[/apps/itv/components/about-hero,/apps/itv/components/about-highlights,/apps/itv/components/about-impact,/apps/itv/components/specs-bmw,/apps/itv/components/brands,/apps/itv/components/cardlist-bmw,/apps/itv/components/contact-section-lp,/apps/itv/components/cookie-banner-lp,/apps/itv/components/hero-bmw,/apps/itv/components/hero-lp,/apps/itv/components/models-header-bmw,/apps/itv/components/team-section]"
+                    layout="simple"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -276,10 +287,14 @@
                 </policy_649128221558427>
                 <policy_1575040440977
                     jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2026-03-15T21:40:06.975+01:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="XF Root"
+                    jcr:title="Policy Nueva LP"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:AEM Intensivo - Content,/apps/itv/components/form/container]">
+                    components="[/apps/itv/components/form/container,/apps/itv/components/footer-lp,/apps/itv/components/header-lp]"
+                    layout="simple"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -331,23 +346,38 @@
             </download>
             <page jcr:primaryType="nt:unstructured">
                 <policy
+                    cq:styleDefaultClasses="page-audi"
                     jcr:description="Includes the required client libraries."
+                    jcr:lastModified="{Date}2026-04-13T11:19:32.652+02:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="Generic Page"
+                    jcr:title="Audi Page"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    clientlibs="[itv.dependencies,itv.site]"
+                    clientlibs="[itv.site,itv.dependencies,itv.landingpage]"
+                    clientlibsAsync="false"
                     clientlibsJsHead="itv.dependencies">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
+                <policy_1775732429352
+                    cq:styleDefaultClasses="page-bmw"
+                    jcr:description="Includes the required client libraries."
+                    jcr:lastModified="{Date}2026-04-13T11:03:32.295+02:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="BMW Page Policy"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    clientlibs="[itv.site,itv.dependencies,itv.landingpage]"
+                    clientlibsAsync="false"
+                    clientlibsJsHead="itv.dependencies">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1775732429352>
             </page>
         </components>
     </itv>
     <wcm jcr:primaryType="nt:unstructured">
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
-                <responsivegrid jcr:primaryType="nt:unstructured">
-            
-                </responsivegrid>
+                <responsivegrid jcr:primaryType="nt:unstructured"/>
             </components>
         </foundation>
     </wcm>
