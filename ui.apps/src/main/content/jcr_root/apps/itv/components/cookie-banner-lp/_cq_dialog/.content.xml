@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Configuración Cookie Banner"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+
+            <bannerText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto del banner"
+                fieldDescription="Mensaje informativo del banner de cookies"
+                name="./bannerText"
+                emptyText="Utilizamos cookies para mejorar tu experiencia..."/>
+
+            <moreLinkText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Texto enlace más información"
+                name="./moreLinkText"
+                emptyText="Más información"/>
+
+            <acceptText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Texto botón Aceptar"
+                name="./acceptText"
+                emptyText="Aceptar"/>
+
+            <rejectText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Texto botón Rechazar"
+                name="./rejectText"
+                emptyText="Rechazar"/>
+
+            <modalTitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Título del modal"
+                name="./modalTitle"
+                emptyText="Política de Cookies"/>
+
+        </items>
+    </content>
+</jcr:root>

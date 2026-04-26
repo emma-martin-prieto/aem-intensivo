@@ -20,6 +20,38 @@
                 name="./logoPath"
                 rootPath="/content/dam"/>
 
+            <legalText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldLabel="Texto del párrafo"
+                fieldDescription="Texto descriptivo o aviso legal que aparece bajo el título BuyCar"
+                name="./legalText"
+                emptyText="Texto legal de BuyCar"/>
+
+            <address
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Ubicación"
+                fieldDescription="Dirección física de la empresa"
+                name="./address"
+                emptyText="Dirección de BuyCar"/>
+
+            <email
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Email de contacto"
+                fieldDescription="Se usará tanto como texto visible como en el href mailto:"
+                name="./email"
+                emptyText="info@buycar.com"/>
+
+            <copyrightText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Texto copyright"
+                fieldDescription="Ej: © 2024 BuyCar. Todos los derechos reservados."
+                name="./copyrightText"
+                emptyText="© 2023 PT Beli Mobil Duit Sendiri"/>
+
             <socialLinks
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"

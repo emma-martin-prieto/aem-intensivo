@@ -24,6 +24,7 @@
             <title
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                required="{Boolean}true"
                 fieldLabel="Título"
                 name="./title"
                 emptyText="BMW. Pura emoción al volante."/>

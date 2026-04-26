@@ -8,19 +8,19 @@
             <div class="footer-lp__info">
                 <h2 class="footer-lp__title">BuyCar</h2>  
                 <div class="footer-lp__text-authorable">
-                    <sly data-sly-resource="${'text' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                    <p>${properties.legalText || 'Texto legal de BuyCar'}</p>
                 </div>
                 <div class="footer-lp__contact">
                     <div class="footer-lp__contact-item">
                         <img src="/content/dam/itv/icon-location.png" alt="Loc">
                         <div class="footer-lp__contact-text">
-                            <sly data-sly-resource="${'address' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                            <p>${properties.address || 'Dirección de BuyCar'}</p>
                         </div>
                     </div>
                     <div class="footer-lp__contact-item">
                         <img src="/content/dam/itv/icon-email.png" alt="Email">
                         <div class="footer-lp__contact-text">
-                            <sly data-sly-resource="${'email-contact' @ resourceType='core/wcm/components/text/v2/text'}"></sly>
+                            <a href="mailto:${properties.email || 'info@buycar.com'}">${properties.email || 'info@buycar.com'}</a>
                         </div>
                     </div>
                 </div>

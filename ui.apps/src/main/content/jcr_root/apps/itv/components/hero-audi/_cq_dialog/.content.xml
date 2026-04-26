@@ -26,6 +26,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                 fieldLabel="Título principal"
+                required="{Boolean}true"
                 name="./title"
                 emptyText="El futuro tiene cuatro anillos."/>
 

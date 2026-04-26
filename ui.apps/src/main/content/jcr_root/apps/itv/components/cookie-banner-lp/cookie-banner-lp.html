@@ -4,18 +4,17 @@
 <div class="cookie-banner cookie-banner--hidden" id="cookieBanner">
     <div class="cookie-banner__content">
         <p class="cookie-banner__text">
-            Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de la web.
-            Puedes aceptar o rechazar las cookies analíticas.
+            ${properties.bannerText || 'Utilizamos cookies para mejorar tu experiencia y analizar el tráfico de la web. Puedes aceptar o rechazar las cookies analíticas.'}
             <button type="button" id="cookiePolicyLink" class="cookie-banner__policy-link">
-                Más información
+                ${properties.moreLinkText || 'Más información'}
             </button>
         </p>
         <div class="cookie-banner__actions">
             <button type="button" id="cookieReject" class="cookie-banner__btn cookie-banner__btn--secondary">
-                Rechazar
+                ${properties.rejectText || 'Rechazar'}
             </button>
             <button type="button" id="cookieAccept" class="cookie-banner__btn cookie-banner__btn--primary">
-                Aceptar
+                ${properties.acceptText || 'Aceptar'}
             </button>
         </div>
     </div>
@@ -26,7 +25,7 @@
     <div class="cookie-modal__overlay" id="cookieModalOverlay"></div>
     <div class="cookie-modal__box">
         <button type="button" class="cookie-modal__close" id="cookieModalClose">✕</button>
-        <h2 class="cookie-modal__title">Política de Cookies</h2>
+        <h2 class="cookie-modal__title">${properties.modalTitle || 'Política de Cookies'}</h2>
         <p>BuyCar utiliza cookies propias y de terceros para mejorar la experiencia de navegación y ofrecer contenidos de interés.</p>
 
         <h3 class="cookie-modal__subtitle">¿Qué son las cookies?</h3>
@@ -42,10 +41,10 @@
 
         <div class="cookie-modal__actions">
             <button type="button" id="cookieModalReject" class="cookie-banner__btn cookie-banner__btn--secondary">
-                Rechazar
+                ${properties.rejectText || 'Rechazar'}
             </button>
             <button type="button" id="cookieModalAccept" class="cookie-banner__btn cookie-banner__btn--primary">
-                Aceptar
+                ${properties.acceptText || 'Aceptar'}
             </button>
         </div>
     </div>

@@ -30,6 +30,7 @@
                                 <image
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    required="{Boolean}true"
                                     fieldLabel="Imagen del coche (PNG transparente recomendado)"
                                     name="imagePath"
                                     rootPath="/content/dam"/>
@@ -44,6 +45,7 @@
                                 <title
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    required="{Boolean}true"
                                     fieldLabel="Nombre del modelo (ej: Audi A6)"
                                     name="modelTitle"/>
 

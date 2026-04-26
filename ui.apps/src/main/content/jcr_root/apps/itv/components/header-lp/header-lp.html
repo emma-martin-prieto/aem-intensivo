@@ -10,16 +10,15 @@
                 <span class="header-lp__logo-text">BuyCar</span>
             </div>
             
-            <!-- Nav de escritorio (se oculta en mobile) -->
             <nav class="header-lp__nav header-lp__nav--desktop">
                 <sly data-sly-resource="${'navigation' @ resourceType='itv/components/navigation'}"></sly>
             </nav>
         </div>
 
         <div class="header-lp__right-group">
-            <a href="tel:999999999" x-cq-linkchecker="skip" class="header-lp__button">
+            <a href="${properties.phoneLink || 'tel:999999999'}" x-cq-linkchecker="skip" class="header-lp__button">
                 <img src="/content/dam/itv/rrss/whatsapp-icon.png" alt="WhatsApp">
-                <span>999 999 999</span>
+                <span>${properties.phoneText || '999 999 999'}</span>
             </a>
         </div>
 
@@ -30,7 +29,6 @@
         </div>
     </div>
 
-    <!-- Nav mobile FUERA del container, al mismo nivel que el header -->
     <nav class="header-lp__nav header-lp__nav--mobile">
         <sly data-sly-resource="${'navigation' @ resourceType='itv/components/navigation'}"></sly>
     </nav>

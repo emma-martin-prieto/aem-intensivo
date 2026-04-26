@@ -51,6 +51,7 @@
                         <image
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            required="{Boolean}true"
                             fieldLabel="Foto del miembro"
                             name="./image"
                             rootPath="/content/dam"
@@ -59,6 +60,7 @@
                         <name
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            required="{Boolean}true"
                             fieldLabel="Nombre completo"
                             name="./name"/>
 
